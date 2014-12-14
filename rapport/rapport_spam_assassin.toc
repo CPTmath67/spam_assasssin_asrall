@@ -1,8 +1,13 @@
 \select@language {french}
 \contentsline {part}{I\hspace {1em}Pr\IeC {\'e}sentation de SpamAssassin}{3}
-\contentsline {section}{\numberline {0.1}Probl\IeC {\'e}matique }{4}
-\contentsline {subsection}{\numberline {0.1.1}Le SPAM}{4}
-\contentsline {subsubsection}{Ses caract\IeC {\'e}ristiques}{4}
-\contentsline {paragraph}{Comment reconna\IeC {\^\i }tre un SPAM:}{4}
-\contentsline {paragraph}{Statut l\IeC {\'e}gal}{4}
-\contentsline {subsection}{\numberline {0.1.2}Le principe de Spam Assassin}{5}
+\contentsline {section}{\numberline {1}Probl\IeC {\'e}matique }{3}
+\contentsline {subsection}{\numberline {1.1}Le SPAM}{3}
+\contentsline {paragraph}{Comment reconna\IeC {\^\i }tre un SPAM:}{3}
+\contentsline {paragraph}{Statut l\IeC {\'e}gal}{3}
+\contentsline {section}{\numberline {2}Le projet}{4}
+\contentsline {subsection}{\numberline {2.1}Informations}{4}
+\contentsline {subsection}{\numberline {2.2}D\IeC {\'e}veloppement}{4}
+\contentsline {subsection}{\numberline {2.3}Q'est ce que SpamAssassin}{4}
+\contentsline {section}{\numberline {3}Ses fonctionnalit\IeC {\'e}s}{6}
+\contentsline {subsection}{\numberline {3.1}Comment il filtre}{6}
+\contentsline {subsection}{\numberline {3.2}Le score}{6}
