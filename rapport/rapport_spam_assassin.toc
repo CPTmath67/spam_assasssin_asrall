@@ -10,6 +10,9 @@
 \contentsline {subsection}{\numberline {2.3}Q'est ce que SpamAssassin}{4}
 \contentsline {section}{\numberline {3}Ses fonctionnalit\IeC {\'e}s}{7}
 \contentsline {subsection}{\numberline {3.1}Comment il filtre}{7}
+\contentsline {paragraph}{Les test de SpamAssassin }{7}
 \contentsline {subsection}{\numberline {3.2}Le score}{8}
 \contentsline {section}{\numberline {4}Articulation du programme}{9}
-\contentsline {subsection}{\numberline {4.1}Fichier de configurations}{9}
+\contentsline {subsection}{\numberline {4.1}Configuration}{9}
+\contentsline {subsubsection}{\numberline {4.1.1}Options de configuration}{9}
+\contentsline {paragraph}{Pr\IeC {\'e}f\IeC {\'e}rences utilisateurs}{9}

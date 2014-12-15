@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/Arch Linux) (preloaded format=pdflatex 2014.12.1)  15 DEC 2014 09:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/Arch Linux) (preloaded format=pdflatex 2014.12.1)  15 DEC 2014 12:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -476,44 +476,44 @@ Overfull \hbox (8.40416pt too wide) in paragraph at lines 180--182
  []
 
 [6 <./annexes/lignes.png>]
-Overfull \hbox (3.5246pt too wide) in paragraph at lines 214--218
+Overfull \hbox (3.5246pt too wide) in paragraph at lines 215--219
 []\OT1/cmr/m/n/10.95 Ce sont des des bases de donn^^Sees conte-nant des adresse
 s
  []
 
 
-Overfull \hbox (8.03674pt too wide) in paragraph at lines 214--218
+Overfull \hbox (8.03674pt too wide) in paragraph at lines 215--219
 \OT1/cmr/m/n/10.95 IP si-gnal^^Sees comme exp^^Sediant du SPAM ou mal confi-gur
 ^^See(Par exemple
  []
 
 [7]
-Overfull \hbox (10.26932pt too wide) in paragraph at lines 218--219
+Overfull \hbox (10.26932pt too wide) in paragraph at lines 219--220
 []\OT1/cmr/m/n/10.95 on peut sp^^Secifier des ca-ract^^Reres et langues comme
  []
 
 <annexes/entete.png, id=40, 702.625pt x 281.05pt>
 File: annexes/entete.png Graphic file (type png)
  <use annexes/entete.png>
-Package pdftex.def Info: annexes/entete.png used on input line 236.
+Package pdftex.def Info: annexes/entete.png used on input line 237.
 (pdftex.def)             Requested size: 360.0pt x 144.0026pt.
 
 [8 <./annexes/entete.png>]
-! Undefined control sequence.
-l.246 \para
-           
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
+Overfull \hbox (2.52228pt too wide) in paragraph at lines 267--268
+[]\OT1/cmr/m/n/10.95 D^^Sefinit le score
+ []
+
+
+Overfull \hbox (8.98364pt too wide) in paragraph at lines 268--269
+[]\OT1/cmr/m/n/10.95 ] As-
+ []
 
 [9] (./rapport_spam_assassin.aux) ) 
 Here is how much of TeX's memory you used:
- 3064 strings out of 493108
- 41460 string characters out of 6140725
+ 3067 strings out of 493108
+ 41501 string characters out of 6140725
  119488 words of memory out of 5000000
- 6476 multiletter control sequences out of 15000+600000
+ 6479 multiletter control sequences out of 15000+600000
  11030 words of font info for 38 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  38i,12n,43p,254b,439s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -527,7 +527,7 @@ cm/cmr6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></us
 r/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texmf-di
 st/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/share/texmf-dist/fonts/type1
 /public/amsfonts/cm/cmti10.pfb>
-Output written on rapport_spam_assassin.pdf (9 pages, 203054 bytes).
+Output written on rapport_spam_assassin.pdf (9 pages, 209387 bytes).
 PDF statistics:
  83 PDF objects out of 1000 (max. 8388607)
  56 compressed objects within 1 object stream
