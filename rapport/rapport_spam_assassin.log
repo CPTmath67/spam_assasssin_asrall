@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/Arch Linux) (preloaded format=pdflatex 2014.12.1)  15 DEC 2014 00:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/Arch Linux) (preloaded format=pdflatex 2014.12.1)  15 DEC 2014 09:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -314,43 +314,64 @@ Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 \f@ncyO@olf=\skip56
 \f@ncyO@orf=\skip57
 )
-(./rapport_spam_assassin.aux)
+(/usr/share/texmf-dist/tex/latex/graphics/color.sty
+Package: color 2014/04/23 v1.1a Standard LaTeX Color (DPC)
+
+(/usr/share/texmf-dist/tex/latex/latexconfig/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package color Info: Driver file: pdftex.def on input line 137.
+)
+(/usr/share/texmf-dist/tex/latex/colortbl/colortbl.sty
+Package: colortbl 2012/02/13 v1.0a Color table columns (DPC)
+
+(/usr/share/texmf-dist/tex/latex/tools/array.sty
+Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
+\col@sep=\dimen108
+\extrarowheight=\dimen109
+\NC@list=\toks17
+\extratabsurround=\skip58
+\backup@length=\skip59
+)
+\everycr=\toks18
+\minrowclearance=\skip60
+) (./rapport_spam_assassin.aux)
 \openout1 = `rapport_spam_assassin.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Info: Redefining \degres on input line 14.
-LaTeX Info: Redefining \dots on input line 14.
-LaTeX Info: Redefining \up on input line 14.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Info: Redefining \degres on input line 16.
+LaTeX Info: Redefining \dots on input line 16.
+LaTeX Info: Redefining \up on input line 16.
 
 
 Package frenchb.ldf Warning: OT1 encoding should not be used for French.
 (frenchb.ldf)                Add \usepackage[T1]{fontenc} to the preamble
-(frenchb.ldf)                of your document, on input line 14.
+(frenchb.ldf)                of your document, on input line 16.
 
 (/usr/share/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count93
-\scratchdimen=\dimen108
+\scratchdimen=\dimen110
 \scratchbox=\box26
 \nofMPsegments=\count94
 \nofMParguments=\count95
-\everyMPshowfont=\toks17
+\everyMPshowfont=\toks19
 \MPscratchCnt=\count96
-\MPscratchDim=\dimen109
+\MPscratchDim=\dimen111
 \MPnumerator=\count97
 \makeMPintoPDFobject=\count98
-\everyMPtoPDFconversion=\toks18
+\everyMPtoPDFconversion=\toks20
 ) (/usr/share/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
 )
@@ -400,17 +421,17 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 16.
+(Font)              <12> on input line 18.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 16.
+(Font)              <8> on input line 18.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 16.
+(Font)              <6> on input line 18.
 
 <spamassassinintro.png, id=1, 335.2525pt x 148.555pt>
 File: spamassassinintro.png Graphic file (type png)
 
 <use spamassassinintro.png>
-Package pdftex.def Info: spamassassinintro.png used on input line 17.
+Package pdftex.def Info: spamassassinintro.png used on input line 19.
 (pdftex.def)             Requested size: 335.25168pt x 148.55463pt.
  [1
 
@@ -429,56 +450,87 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[2]
-Overfull \hbox (2.26pt too wide) in paragraph at lines 34--35
-[]\OT1/cmr/m/n/10.95 Avant de pour-suivre sur Spa-mAs-sas-sin, rap-pel-lons con
-cr^^Retement ce qu'est
- []
-
-[3]
-Overfull \hbox (11.14464pt too wide) in paragraph at lines 77--79
-\OT1/cmr/m/n/10.95 constament en dev-lop-pe-ment pour s'adap-ter aux de-ve-lop-
-pe-ments des m^^Sethodes
+[2] [3]
+Overfull \hbox (23.84535pt too wide) in paragraph at lines 70--80
+ [] 
  []
 
 <annexes/lignes.png, id=21, 513.92pt x 321.2pt>
 File: annexes/lignes.png Graphic file (type png)
  <use annexes/lignes.png>
-Package pdftex.def Info: annexes/lignes.png used on input line 86.
-(pdftex.def)             Requested size: 513.91873pt x 321.19922pt.
+Package pdftex.def Info: annexes/lignes.png used on input line 101.
+(pdftex.def)             Requested size: 360.0pt x 225.0051pt.
 
-Overfull \hbox (212.92717pt too wide) in paragraph at lines 86--87
- [][]\OT1/cmr/m/n/10.95 [width=1px] 
+Overfull \hbox (13.73245pt too wide) in paragraph at lines 110--163
+ [] 
  []
 
-
-Overfull \hbox (8.40416pt too wide) in paragraph at lines 102--104
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <9> on input line 164.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 164.
+[4] [5]
+Overfull \hbox (8.40416pt too wide) in paragraph at lines 180--182
 []\OT1/cmr/m/n/10.95 Comme une in-ter-face de pro-gra-ma-tion : des pro-grammes
- qui n^^Sec^^Sessitent
+ qui n^^Secessitent
  []
 
-[4] [5 <./annexes/lignes.png>] [6] (./rapport_spam_assassin.aux) ) 
+[6 <./annexes/lignes.png>]
+Overfull \hbox (3.5246pt too wide) in paragraph at lines 214--218
+[]\OT1/cmr/m/n/10.95 Ce sont des des bases de donn^^Sees conte-nant des adresse
+s
+ []
+
+
+Overfull \hbox (8.03674pt too wide) in paragraph at lines 214--218
+\OT1/cmr/m/n/10.95 IP si-gnal^^Sees comme exp^^Sediant du SPAM ou mal confi-gur
+^^See(Par exemple
+ []
+
+[7]
+Overfull \hbox (10.26932pt too wide) in paragraph at lines 218--219
+[]\OT1/cmr/m/n/10.95 on peut sp^^Secifier des ca-ract^^Reres et langues comme
+ []
+
+<annexes/entete.png, id=40, 702.625pt x 281.05pt>
+File: annexes/entete.png Graphic file (type png)
+ <use annexes/entete.png>
+Package pdftex.def Info: annexes/entete.png used on input line 236.
+(pdftex.def)             Requested size: 360.0pt x 144.0026pt.
+
+[8 <./annexes/entete.png>]
+! Undefined control sequence.
+l.246 \para
+           
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[9] (./rapport_spam_assassin.aux) ) 
 Here is how much of TeX's memory you used:
- 2901 strings out of 493108
- 39344 string characters out of 6140725
- 107571 words of memory out of 5000000
- 6328 multiletter control sequences out of 15000+600000
- 10417 words of font info for 36 fonts, out of 8000000 for 9000
+ 3064 strings out of 493108
+ 41460 string characters out of 6140725
+ 119488 words of memory out of 5000000
+ 6476 multiletter control sequences out of 15000+600000
+ 11030 words of font info for 38 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 37i,11n,43p,254b,439s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/font
-s/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmcsc10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr
-/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmr9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmsl10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on rapport_spam_assassin.pdf (6 pages, 148363 bytes).
+ 38i,12n,43p,254b,439s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx
+12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/
+share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmr17.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmr6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></us
+r/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/share/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmti10.pfb>
+Output written on rapport_spam_assassin.pdf (9 pages, 203054 bytes).
 PDF statistics:
- 67 PDF objects out of 1000 (max. 8388607)
- 45 compressed objects within 1 object stream
+ 83 PDF objects out of 1000 (max. 8388607)
+ 56 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 11 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 16 words of extra memory for PDF output out of 10000 (max. 10000000)
 

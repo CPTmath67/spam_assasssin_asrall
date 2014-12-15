@@ -3,6 +3,8 @@
 \usepackage[francais]{babel}
 \usepackage{graphicx}
 \usepackage{fancyhdr}
+\usepackage {color}
+\usepackage{colortbl}
 
 % Title Page
 \title{SPAM ASSASSIN}
@@ -31,7 +33,7 @@ les communications entres les personnes. Malheureusement, mail est également au
 indésirables qui s'entassent dans nos boites mails. C'est ici qu'entre en jeu SpamAssassin.
 
 \subsection{Le SPAM}
-Avant de poursuivre sur SpamAssassin, rappellons concrètement ce qu'est le SPAM et ce qu'il implique. 
+Avant de poursuivre sur SpamAssassin, rappelons concrètement ce qu'est le SPAM et ce qu'il implique. 
 
 \paragraph{Comment reconnaître un SPAM:}
 
@@ -63,19 +65,106 @@ Les SPAM sont donc connus du droit français et encadrés par des textes spécif
 
 \subsection{Informations}
 
+
 \begin{center}
 \begin{tabular}{cll}
-Développeur & Apache Software Foundation1  \\
+\hline
+Développeur & Apache Software Foundation  \\
+Langage & Perl 
 Dernière version & 3.4.0 (11 février 2014) [+/-] \\
 Environnements & Multiplate-forme  \\
 Type & Anti-spam & \\
-Licence & Licence Apache 2.0 
-
+Licence & Licence Apache 2.0 \\ \\
+\hline
 \end{tabular}
 \end{center}
 
-Le projet SpamAssassin est actif depuis plus d'une décénnies et est constament en devloppement 
-pour s'adapter aux developpements des méthodes qu'utilisent les spammeurs. C'est en outre le programme anti-spam le plus utilisé à cause de son efficacité.
+
+
+SpamAsassin est donc aujourd'hui sous le giron de la Apache Software Foundation, organisation à but non lucratif qui
+s'occupe également du serveur Apache, Logiciel de distribution de contenu WEB le plus utilisés au monde. 
+Elle gère également 150 autres projets.
+EN outre tout ses projets sont distribués sous sa propre Licence, la licence Apache(actuellement en 2.0) , qui est compatible GPL v3.
+Cette licence met l’accent sur le copyright tout en restant bien sur une licence libre. Les objectifs principaux de la Fondation sont de protéger 
+juridiquement le travail des contributeurs et d'empêcher que la marque Apache soit utilisée illégalement.
+
+Le projet SpamAssassin est actif depuis plus d'une décennies et est constamment en développement 
+pour s'adapter aux développements des méthodes qu'utilisent les spammeurs. C'est en outre le programme anti-spam le plus utilisé à cause de son efficacité.
+
+\subsection{Développement}
+
+SpamAssasin contient environ 300 000 lignes de codes ce qui en fait un très gros projet( Graphique ~\ref{fig:code}).
+Le projet est à maturité et il ne grossit plus depuis plusieurs années, les développeurs se concentrant sur l'optimisation du code existant.
+Il y actuellement 23 développeurs, avec une répartition des lignes codes assez inégales, notamment deux développeurs qui ont fait la majorité du code( Tableau ~\ref{tab:devs})
+
+\begin{figure}
+ \includegraphics[width=\textwidth]{annexes/lignes.png}
+  \caption{Évolution du nombre de ligne de codes}
+  \label {fig:code}
+\end{figure}
+
+\begin{table}
+ 
+\definecolor{tcA}{rgb}{0.627451,0.627451,0.643137}
+\begin{center}
+\begin{tabular}{lllll}
+
+\rowcolor{tcA}
+ Author Id & Changes & Lines of Code & Lines per Change\\
+\rowcolor{tcA}
+ Totals & 26092 (100.0\%) & 1403447 (100.0\%) & 53.7\\
+\rowcolor{tcA}
+  jm & 8136 (31.2\%) & 721593 (51.4\%) & 88.6\\
+\rowcolor{tcA}
+  spamassassin role & 7997 (30.6\%) & 463448 (33.0\%) & 57.9\\
+\rowcolor{tcA}
+  axb & 741 (2.8\%) & 54525 (3.9\%) & 73.5\\
+\rowcolor{tcA}
+  mmartinec & 1779 (6.8\%) & 32348 (2.3\%) & 18.1\\
+\rowcolor{tcA}
+  felicity & 1625 (6.2\%) & 29134 (2.1\%) & 17.9\\
+\rowcolor{tcA}
+  kmcgrail & 605 (2.3\%) & 21294 (1.5\%) & 35.1\\
+\rowcolor{tcA}
+  quinlan & 1100 (4.2\%) & 19583 (1.4\%) & 17.8\\
+\rowcolor{tcA}
+  parker & 309 (1.2\%) & 10407 (0.7\%) & 33.6\\
+\rowcolor{tcA}
+  khopesh & 1369 (5.2\%) & 10296 (0.7\%) & 7.5\\
+\rowcolor{tcA}
+  dos & 427 (1.6\%) & 8427 (0.6\%) & 19.7\\
+\rowcolor{tcA}
+  jhardin & 1021 (3.9) & 6845 (0.5\%) & 6.7\\
+\rowcolor{tcA}
+  wtogami & 137 (0.5\%) & 6470 (0.5\%) & 47.2\\
+\rowcolor{tcA}
+  hstern & 63 (0.2\%) & 6029 (0.4\%) & 95.6\\
+\rowcolor{tcA}
+  sidney & 275 (1.1\%) & 3552 (0.3\%) & 12.9\\
+\rowcolor{tcA}
+  jquinn & 28 (0.1\%) & 2181 (0.2\%) & 77.8\\
+\rowcolor{tcA}
+  mss & 133 (0.5\%) & 2072 (0.1\%) & 15.5\\
+\rowcolor{tcA}
+ hege & 95 (0.4\%) & 1931 (0.1\%) & 20.3\\
+\rowcolor{tcA}
+ duncf & 109 (0.4\%) & 1892 (0.1\%) & 17.3\\
+\rowcolor{tcA}
+  jgmyers & 66 (0.3\%) & 508 (0.0\%) & 7.6\\
+\rowcolor{tcA}
+  smf & 35 (0.1\%) & 499 (0.0\%) & 14.2\\
+\rowcolor{tcA}
+  maddoc & 11 (0.0\%) & 319 (0.0\%) & 29.0\\
+\rowcolor{tcA}
+  fanf & 12 (0.0\%) & 49 (0.0\%) & 4.0\\
+\rowcolor{tcA}
+  kb & 19 (0.1\%) & 45 (0.0\%) & 2.3
+\end{tabular}
+\caption{Statistique des développeurs du projets }
+\footnotesize{Source \footnote{Tableau généré avec StatSVN à partir des sources de SpamAssassin}}
+\label{tab:devs}
+\end{center}
+\end{table}
 
 \subsection{Q'est ce que SpamAssassin}
 
@@ -87,8 +176,8 @@ qui peuvent être utilisée par d'autres programmes pour effectuer des actions s
 Il peut être utiliser de plusieurs manière:
 \begin{itemize}
  \item En mode client, lancé à chaque fois que l'on fait appel à lui
- \item En mode demon grâce à \emph{smapd} , les appels au demon étant fait avec l'utilitaire \emph{spamc}.
- \item Comme une interface de programation: des programmes qui nécéssitent des fonctionnalitées de filtrage de SPAM peuvent s'interfacer avec SpamAssin
+ \item En mode demon grâce à \emph{spamd} , les appels au demon étant fait avec l'utilitaire \emph{spamc}.
+ \item Comme une interface de programation: des programmes qui nécessitent des fonctionnalités de filtrage de SPAM peuvent s'interfacer avec SpamAssin
  pour construire des solutions utilisant ses fonctionnalités
 \end{itemize}
 
@@ -98,28 +187,59 @@ Il peut être utiliser de plusieurs manière:
 
 \subsection{Comment il filtre}
 
+SpamAssassin reçoit des mails que lui redirigent d'autres programmes, y effectue des test pour déterminer si ce sont des SPAMS, 
+puis renvois les mails testés au programme qui les as envoyés.
+
 \begin{description}
  \item [Champs d'entête] En se basant sur la forme des entêtes et en les comparant avec des schéma connus par SpamAssasin. En effet 
  on peut se base sur la façon dont certains systèmes de SPAMs construisent leurs messages pour les filtrer. 
  \item [Corps du message] Bien sur SpamAssasin permet de filtrer les mails suivant les mots et expressions qu'ils contiennent. 
  ``ceci n'est pas un SPAM'', ``Bonjour jes suis une princesse d'un royaume africain'', ``Venez chechez votre lot'', \dots sont des expressions
  typiques pour des SPAMs. 
- \item [Filtre bayésien] Filtrer les entêtes et le corps d'un message resultera toujours en de multiples faux positifs. C'est ici que le filtarge 
+ \item [Filtre bayésien] Filtrer les entêtes et le corps d'un message résultera toujours en de multiples faux positifs. C'est ici que le filtarge 
  bayésien se révèle interessant car il va prendre en considération ce que l'on considère comme SPam et non SPAM soit des ``bon mails'' (``HAM'' en anglais).
  Il va ensuite utiliser les repertoires de SPAMs connu et de ``HAM``  connus, pour y identifier les mots et phrases (Définits comme ''Tokens`` en anglais)
  qui n'apparaissent que dans les SPAMs et que dans les ''HAMs``.
  Un token SPAM trouvé resultant d'une hausse du score (voir \ref{score}) SPAM, un token résultant en une baisse de ce niveau. Ce filtrage permet d'être plus précis et d'éviter les faux positifs, 
- en ne se basant sur un mot ou une phrase mais des enssembles. 
-\end{description} 
+ en ne se basant sur un mot ou une phrase mais des ensembles. 
+ \item [List noire/blanche automatique] SpamAssassin garde automatiquement une liste blanches des expéditeurs des mails.
+ Pour chaque nouveau mail le programme compare le mail précédent provenant de la même adfresse mail et adresse IP.
+ Comme précédemment si une adresse email a envoyé un SPAM, ce nouveau mail verra son score abaissé. A l'inverse si c'était un bon mail son score 
+ se verra baisser.
+ \item [Liste noire/blanche manuelle] Il est tout à fait possible de définir ses propres listes, en autorisant ou 
+ interdisant des mails de certaines adresses
+ \item [Signalements] En utilisant des signatures établis à partir de mails signalés par les utilisateurs. Il y a notamment les projets DCC, Pyzor, et Razor2
+ qui possèdent des bases de données de mails signalés comme SPAM. SpamAssassin va ainsi demander à ces bases si les mails qu'il reçoit 
+ sont présents dans leurs donnée.
+ \item [DNS blocklists] Ce sont des des bases de données contenant des adresses IP signalées comme expédiant du SPAM ou mal 
+ configurée(Par exemple en étant un relais ouvert). Également sont pris en compte les IP de particuliers (considérant qu'il y a peu de chance
+qu'un particulier envois directement des mails sans passer par son FAI. Ces signalements vont être pris en compte par SpamAsassin pour le score des mails.
+Il intègre nativement quelque une de ces listes.
+\item [Caractères et langues] on peut spécifier des caractères et langues comme SPAM.
+
+C'est ces ensembles de règles qui fonctionnant conjointement permettent à SpamAssassin de garantir un haut 
+niveau de fiabilité de détection des SPAM, un test pouvant ne pas fonctionner mais sera contrebalancé par les autres.
+ \end{description} 
 
 
-Spam Assassin effectue sur chaque mail qui lui est donné à traiter une serie de test, qui vont ensuite donner lieu à un score, qui sera indiqué dans un entête si il est considéré comme SPAM. 
+Spam Assassin effectue sur chaque mail qui lui est donné à traiter une série de test, qui vont ensuite donner lieu à un score, qui sera indiqué dans un entête si il est considéré comme SPAM. 
 Ce résultat sera ensuite utilisé par d'autres programmes pour déterminer des actions à entreprendre.
 
 
 \subsection{Le score} \label{score}
-C'est la base du fonctionnement du programme.  Après avoir effectué une série de test le programme va déterminer une note. 
+C'est la base du signalement des SPAM de SpamAsassin. Un mail après avoir subi des test différents se voit attribuer une note. Cette note permet
+ensuite de définir des actions à effectuer. Quand un entête de mail est réécrit, SpamAssassin ajoute ses propres champs avec
+notamment le score, mais également d'autres données (Exemple ~\ref{fig:ex_score}). L'utilisateur peut paramétrer ce 
+score pour définir une marge de définitions des SPAMs(valeurs ''require``)
+
+\begin{figure}[b]
+ \includegraphics[width=\textwidth]{annexes/entete.png}
+ \label{fig:ex_score}
+\end{figure}
+
 \pagebreak
+
+qsdfgh
 
 \appendix
 

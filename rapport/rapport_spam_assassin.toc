@@ -8,6 +8,8 @@
 \contentsline {subsection}{\numberline {2.1}Informations}{4}
 \contentsline {subsection}{\numberline {2.2}D\IeC {\'e}veloppement}{4}
 \contentsline {subsection}{\numberline {2.3}Q'est ce que SpamAssassin}{4}
-\contentsline {section}{\numberline {3}Ses fonctionnalit\IeC {\'e}s}{6}
-\contentsline {subsection}{\numberline {3.1}Comment il filtre}{6}
-\contentsline {subsection}{\numberline {3.2}Le score}{6}
+\contentsline {section}{\numberline {3}Ses fonctionnalit\IeC {\'e}s}{7}
+\contentsline {subsection}{\numberline {3.1}Comment il filtre}{7}
+\contentsline {subsection}{\numberline {3.2}Le score}{8}
+\contentsline {section}{\numberline {4}Articulation du programme}{9}
+\contentsline {subsection}{\numberline {4.1}Fichier de configurations}{9}
