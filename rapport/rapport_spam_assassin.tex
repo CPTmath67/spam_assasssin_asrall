@@ -1,4 +1,4 @@
-\documentclass[a4paper,11pt]{report}
+\documentclass[a4paper,11pt]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[francais]{babel}
 \usepackage{graphicx}
@@ -9,7 +9,7 @@
 % Title Page
 \title{SPAM ASSASSIN}
 \date{Décembre 2014}
-\author{Mathieu KERN -}
+\author{Mathieu KERN - Aymeric HINDERCHIETTE}
 \pagestyle{fancy}
 
 
@@ -27,24 +27,24 @@
 
 \section{Problématique }
 
-  Le mail(ou courriel) est aujourd'hui le moyen privilégié de communication à travers le monde. Massivement utilisé, 
-d'une certaine fiabilité et éprouvé par des décennies d'utilisation il reste le moyen le plus répandues pour 
+  Le mail (ou courriel) est aujourd'hui le moyen privilégié de communication à travers le monde. Massivement utilisé, 
+d'une certaine fiabilité et éprouvé par des décennies d'utilisation il reste le moyen le plus répandu pour 
 les communications entres les personnes. Malheureusement, mail est également aujourd'hui synonyme de spam, ces messages
 indésirables qui s'entassent dans nos boites mails. C'est ici qu'entre en jeu SpamAssassin.
 
 \subsection{Le SPAM}
 Avant de poursuivre sur SpamAssassin, rappelons concrètement ce qu'est le SPAM et ce qu'il implique. 
 
-\paragraph{Comment reconnaître un SPAM:}
+\paragraph{Comment reconnaître un SPAM :}
 
 \begin{itemize}
  \item De par sa nature, un SPAM n'est pas désiré par l'utilisateur qui le reçoit. 
- \item La réception d'un SPAM résulte d'un envoi massif: une machine (souvent un bot) envoi le même message 
- à plusieurs destinataire sans aucun discernement. Cela s'oppose aux messages ciblés par exemple de commerçant,
- qui n’envoie que à leurs prospects.
- \item Son contenu n'est pas destiné spécifique à l'utilisateur (chaque personne reçoit le même contenu)
- \item Une importante liste de destinataires 
- \item Entête des messages souvent corrompues ou ne respectant pas les normes
+ \item La réception d'un SPAM résulte d'un envoi massif : une machine (souvent un bot) envoie le même message 
+ à plusieurs destinataires sans aucun discernement. Cela s'oppose aux messages ciblés par exemple de commerçant,
+ qui n’envoie que à leurs prospects (à but publicitaire).
+ \item Son contenu n'est pas spécifiquement destiné à l'utilisateur (chaque personne reçoit le même contenu).
+ \item Une importante liste de destinataires. 
+ \item Entête des messages souvent corrompues ou ne respectant pas les normes.
 \end{itemize}
 
 \paragraph{Statut légal}
@@ -88,16 +88,14 @@ EN outre tout ses projets sont distribués sous sa propre Licence, la licence Ap
 Cette licence met l’accent sur le copyright tout en restant bien sur une licence libre. Les objectifs principaux de la Fondation sont de protéger 
 juridiquement le travail des contributeurs et d'empêcher que la marque Apache soit utilisée illégalement.
 
-Le projet SpamAssassin est actif depuis plus d'une décennies et est constamment en développement 
+Le projet SpamAssassin est actif depuis plus d'une décennie et est constamment en développement 
 pour s'adapter aux développements des méthodes qu'utilisent les spammeurs. C'est en outre le programme anti-spam le plus utilisé à cause de son efficacité.
 
 \subsection{Développement}
 
 SpamAssasin contient environ 300 000 lignes de codes ce qui en fait un très gros projet( Graphique ~\ref{fig:code}).
 Le projet est à maturité et il ne grossit plus depuis plusieurs années, les développeurs se concentrant sur l'optimisation du code existant.
-Il y actuellement 23 développeurs pricnipaux, avec une répartition des lignes codes assez inégales, notamment deux développeurs qui ont fait la majorité du code( Tableau ~\ref{tab:devs}).
-Mais vu que c'est un projet libre et open source, chacun est libre de contribuer et forker le projet. Cela concerne aussi 
-bien les particuliers que les entreprises (En respectant bien sur les restirction de la licence Apache).
+Il y actuellement 23 développeurs, avec une répartition des lignes codes assez inégales, notamment deux développeurs qui ont fait la majorité du code( Tableau ~\ref{tab:devs})
 
 \begin{figure}
  \includegraphics[width=\textwidth]{annexes/lignes.png}
@@ -168,14 +166,14 @@ bien les particuliers que les entreprises (En respectant bien sur les restirctio
 \end{center}
 \end{table}
 
-\subsection{Q'est ce que SpamAssassin}
+\subsection{Qu'est ce que SpamAssassin}
 
 SpamAssassin est un programme écrit en PERL dont le but est de filtrer activement les Emails en se basant sur des mécanismes internes. 
 SpamAssassin n'effectue aucune action envers les mails, il ajoute seulement des informations personnalisés
-qui peuvent être utilisée par d'autres programmes pour effectuer des actions sur les mails (les rangers des dossiers distincts, les supprimer, les bloquer, \dots)
+qui peuvent être utilisée par d'autres programmes pour effectuer des actions sur les mails (les ranger des dossiers distincts, les supprimer, les bloquer, \dots)
 
 
-Il peut être utiliser de plusieurs manière:
+Il peut être utilisé de plusieurs manières :
 \begin{itemize}
  \item En mode client, lancé à chaque fois que l'on fait appel à lui
  \item En mode demon grâce à \emph{spamd} , les appels au demon étant fait avec l'utilitaire \emph{spamc}.
@@ -185,14 +183,14 @@ Il peut être utiliser de plusieurs manière:
 
 \pagebreak
 
-\part{Ses fonctionnalités}
+\section{Ses fonctionnalités}
 
-\section{Comment il filtre}
+\subsection{Comment il filtre}
 
-SpamAssassin reçoit des mails que lui redirigent d'autres programmes, y effectue des test pour déterminer si ce sont des SPAMS, 
-puis renvois les mails testés au programme qui les as envoyés.
+SpamAssassin reçoit des mails que lui redirigent d'autres programmes, y effectue des tests pour déterminer si ce sont des SPAMS, 
+puis renvoie les mails testés au programme qui les as envoyés.
 
-\subsection{Les test de SpamAssassin }
+\paragraph{Les tests de SpamAssassin }
 \begin{description}
  \item [Champs d'entête] En se basant sur la forme des entêtes et en les comparant avec des schéma connus par SpamAssasin. En effet 
  on peut se base sur la façon dont certains systèmes de SPAMs construisent leurs messages pour les filtrer. 
@@ -229,19 +227,15 @@ Spam Assassin effectue sur chaque mail qui lui est donné à traiter une série 
 Ce résultat sera ensuite utilisé par d'autres programmes pour déterminer des actions à entreprendre.
 
 
-\section{Le score} \label{score}
+\subsection{Le score} \label{score}
 C'est la base du signalement des SPAM de SpamAsassin. Un mail après avoir subi des test différents se voit attribuer une note. Cette note permet
 ensuite de définir des actions à effectuer. Quand un entête de mail est réécrit, SpamAssassin ajoute ses propres champs avec
 notamment le score, mais également d'autres données (Exemple ~\ref{fig:ex_score}). L'utilisateur peut paramétrer ce 
-score pour définir une marge de définitions des SPAMs(valeurs ''require``). Une fois ce score ateint le mail est considéré comme SPAM.
-
-C'est ensuite aux autres programmes d'utiliser ces données. Par exemple on pourrait configurer un MUA pour qu'il sépare 
-les SPAM par score suivant des filtres définit. 
+score pour définir une marge de définitions des SPAMs(valeurs ''require``)
 
 \begin{figure}[b]
  \includegraphics[width=\textwidth]{annexes/entete.png}
  \label{fig:ex_score}
- \caption{Exemple d'entête réécrit par SpamAssassin}
 \end{figure}
 
 \pagebreak
@@ -250,51 +244,37 @@ les SPAM par score suivant des filtres définit.
 
 \subsection{Configuration}
 
-La configuration de Spamassassin se fait principalement à travers le fichier \emph{local.cf}(exemple ~\ref{fig:local_sample}), qui se trouve dans le 
+La configuration de Spamassassin se fait principalement à travers le fichier \emph{local.cf}, qui se trouve dans le 
 repertoire '\emph{/etc/spamassassin}.
 Les utilisateurs UNIX peuvent également avoir leurs propres configurations grâce au fichier \emph{user\_prefs}
 qui se trouve dans le répertoire \emph{.spamassassin} de leurs home respectifs. 
-Par défaut, un certain nombre d’options sont prédéfinies. 
-
-\begin{figure}
- \centering
- \includegraphics[width=\textwidth]{./annexes/local_sample.png}
- % local_sample.png: 0x0 pixel, 300dpi, 0.00x0.00 cm, bb=
- \caption{Exemle de configuration basique de SpamAssassin}
- \label{fig:local_sample}
-\end{figure}
-
+Par défaut, un certain nombre d’options sont prédéfinies. Voici les principales \begin{itemize}
+ \item 5 définit le score au delà duquel les mails sont considérés comme du spam ;
+ \item fr en indique les langues que vous acceptez de recevoir (les autres auront un score plus élevé). Cette ligne n’est pas forcément prédéfinie ;
+ \item fr pour avoir les rapports en Français ;
+ \item *@domaine.org Cette ligne (à éditer) permet de ne pas considérer les mails du domaine comme du spam.
+\end{itemize}
 
 \subsubsection{Options de configuration}
 
 Spam assassin possèdent plusieurs options dont certaine non activés par défaut. Il suffit de les ajouter aux fichiers 
 de configuration.
-Les options les plus importantes sont les suivantes:
+
+\paragraph{Préférences utilisateurs}
 
 \begin{description}
- \item [Désactiver les préférences utilisateurs]Dans \emph{/etc/default/spamassassin}, il faut changer la ligne d'options pour désactiver les préférences par utilisateur (qui serait normalement stockées dans leur home directory) et utiliser les préférences globales à la place. 
  \item [Options de score] \begin{description}
                            \item [required\_score n.nn (default:5)] Définit le score par défaut considérant un message comme SPAM. la valeur peut être un réel ou un entier
                            \item [score SYMBOLIC\_TEST\_NAME n.nn [ n.nn n.nn n.nn ]] Assigne les scores( voir ~\ref{score}) à un test donné.
                           \end{description}
-\item 
+
 
 \end{description}
 
 
 
 \appendix
-\section{ Utilisation }
 
-\subsection{MTA}
-
-SpamAssassin peut être utilisé avec des Mail Transfert Agent comme Postfix. On peut par exemple contrôler les messages
-avec SpamAssassin juste après leurs reception par le demon SMTP. Mais la façon la plus répandue est d'utiliser procmail qui se charge
-de filtrer satiquement les mails et de la déposer dans leurs boites respectives. 
-
-\subsubsection{procmail}
-
-L'utilisation avec procmail est assez simple. Il faut modifier ou créer le fichier procmail.c qui se trouve dans le repertoire \emph{/etc.}
 
 
 
