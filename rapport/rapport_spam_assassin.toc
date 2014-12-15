@@ -1,20 +1,27 @@
 \select@language {french}
-\contentsline {part}{I\hspace {1em}Pr\IeC {\'e}sentation de SpamAssassin}{3}
-\contentsline {section}{\numberline {0.1}Probl\IeC {\'e}matique }{4}
-\contentsline {subsection}{\numberline {0.1.1}Le SPAM}{4}
-\contentsline {paragraph}{Comment reconna\IeC {\^\i }tre un SPAM:}{4}
-\contentsline {paragraph}{Statut l\IeC {\'e}gal}{4}
-\contentsline {section}{\numberline {0.2}Le projet}{5}
-\contentsline {subsection}{\numberline {0.2.1}Informations}{5}
-\contentsline {subsection}{\numberline {0.2.2}D\IeC {\'e}veloppement}{5}
-\contentsline {subsection}{\numberline {0.2.3}Qu'est ce que SpamAssassin}{5}
-\contentsline {part}{II\hspace {1em}Ses fonctionnalit\IeC {\'e}s}{8}
-\contentsline {section}{\numberline {0.3}Comment il filtre}{9}
-\contentsline {subsection}{\numberline {0.3.1}Les test de SpamAssassin }{9}
-\contentsline {section}{\numberline {0.4}Le score}{10}
-\contentsline {section}{\numberline {0.5}Articulation du programme}{11}
-\contentsline {subsection}{\numberline {0.5.1}Configuration}{11}
-\contentsline {subsubsection}{Options de configuration}{11}
-\contentsline {section}{\numberline {.1} Utilisation }{11}
-\contentsline {subsection}{\numberline {.1.1}MTA}{11}
-\contentsline {subsubsection}{procmail}{11}
+\contentsline {part}{I\hspace {1em}Pr\IeC {\'e}sentation de SpamAssassin}{3}{part.1}
+\contentsline {section}{\numberline {1}Probl\IeC {\'e}matique }{3}{section.1}
+\contentsline {subsection}{\numberline {1.1}Le SPAM}{3}{subsection.1.1}
+\contentsline {paragraph}{Comment reconna\IeC {\^\i }tre un SPAM:}{3}{section*.2}
+\contentsline {paragraph}{Statut l\IeC {\'e}gal}{3}{section*.3}
+\contentsline {section}{\numberline {2}Le projet}{4}{section.2}
+\contentsline {subsection}{\numberline {2.1}Informations}{4}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}D\IeC {\'e}veloppement}{4}{subsection.2.2}
+\contentsline {subsection}{\numberline {2.3}Qu'est ce que SpamAssassin}{4}{subsection.2.3}
+\contentsline {part}{II\hspace {1em}Ses fonctionnalit\IeC {\'e}s}{7}{part.2}
+\contentsline {section}{\numberline {3}Comment il filtre}{7}{section.3}
+\contentsline {subsection}{\numberline {3.1}Les test de SpamAssassin }{7}{subsection.3.1}
+\contentsline {section}{\numberline {4}Le score}{8}{section.4}
+\contentsline {section}{\numberline {5}Le filtre bay\IeC {\'e}sien}{9}{section.5}
+\contentsline {paragraph}{Uilisation par SpamAssassin}{9}{section*.4}
+\contentsline {paragraph}{Sa learn}{9}{section*.5}
+\contentsline {section}{\numberline {6}Articulation du programme}{10}{section.6}
+\contentsline {subsection}{\numberline {6.1}Configuration}{10}{subsection.6.1}
+\contentsline {subsubsection}{\numberline {6.1.1}Options de configuration}{10}{subsubsection.6.1.1}
+\contentsline {subsection}{\numberline {6.2}Les r\IeC {\`e}gles}{11}{subsection.6.2}
+\contentsline {section}{\numberline {7} Utilisation }{11}{section.7}
+\contentsline {subsection}{\numberline {7.1}MDA}{11}{subsection.7.1}
+\contentsline {subsection}{\numberline {7.2}SMTP}{12}{subsection.7.2}
+\contentsline {part}{III\hspace {1em}Autour de SpamAssasin}{12}{part.3}
+\contentsline {section}{\numberline {8}Comparatif avec des logiciels similaires \IeC {\`a} SpamAssassin}{12}{section.8}
+\contentsline {section}{\numberline {9}Quelques logiciels pouvant travailler avec SpamAssassin}{13}{section.9}

@@ -1,10 +1,12 @@
-\documentclass[a4paper,11pt]{report}
+\documentclass[a4paper,11pt]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[francais]{babel}
 \usepackage{graphicx}
 \usepackage{fancyhdr}
 \usepackage {color}
 \usepackage{colortbl}
+\usepackage{hyperref}
+\usepackage{listings}
 
 % Title Page
 \title{SPAM ASSASSIN}
@@ -51,7 +53,7 @@ Avant de poursuivre sur SpamAssassin, rappelons concrètement ce qu'est le SPAM 
 
 
 La loi pour la confiance dans l'économie numérique du 21 juin 2004 contient une transposition de la
-directive européenne du 12 juillet 2002\footnote{Le principe introduit figura également à l'article L.34.5 du code 
+directive européenne du 12 juillet 2002\footnote{Le principe introduit figurera également à l'article L.34.5 du code 
 des postes et des communications électroniques } relative à la protection de la vie privée dans le secteur des communications
 électroniques:
 \begin{quote}
@@ -168,6 +170,7 @@ bien les particuliers que les entreprises (En respectant bien sur les restirctio
 \end{center}
 \end{table}
 
+
 \subsection{Qu'est ce que SpamAssassin}
 
 SpamAssassin est un programme écrit en PERL dont le but est de filtrer activement les Emails en se basant sur des mécanismes internes. 
@@ -200,7 +203,7 @@ puis renvoie les mails testés au programme qui les as envoyés.
  \item [Corps du message] Bien sur SpamAssasin permet de filtrer les mails suivant les mots et expressions qu'ils contiennent. 
  ``ceci n'est pas un SPAM'', ``Bonjour jes suis une princesse d'un royaume africain'', ``Venez chechez votre lot'', \dots sont des expressions
  typiques pour des SPAMs. 
- \item [Filtre bayésien] Filtrer les entêtes et le corps d'un message résultera toujours en de multiples faux positifs. C'est ici que le filtrage 
+ \item [Filtre bayésien(détail plus loin ~\ref{baye})] Filtrer les entêtes et le corps d'un message résultera toujours en de multiples faux positifs. C'est ici que le filtrage 
  bayésien se révèle interessant car il va prendre en considération ce que l'on considère comme SPam et non SPAM soit des ``bon mails'' (``HAM'' en anglais).
  Il va ensuite utiliser les repertoires de SPAMs connu et de ``HAM``  connus, pour y identifier les mots et phrases (Définits comme ''Tokens`` en anglais)
  qui n'apparaissent que dans les SPAMs et que dans les ''HAMs``.
@@ -226,24 +229,54 @@ niveau de fiabilité de détection des SPAM, un test pouvant ne pas fonctionner 
  \end{description} 
 
 
-Spam Assassin effectue sur chaque mail qui lui est donné à traiter une série de test, qui vont ensuite donner lieu à un score, qui sera indiqué dans un entête si il est considéré comme SPAM. 
+Spam Assassin effectue sur chaque mail qui lui est donné à traiter une série de test, qui vont ensuite donner lieu à un score, qui sera indiqué dans un entête 
+si il est considéré comme SPAM. 
 Ce résultat sera ensuite utilisé par d'autres programmes pour déterminer des actions à entreprendre.
 
 
 \section{Le score} \label{score}
 C'est la base du signalement des SPAM de SpamAsassin. Un mail après avoir subi des test différents se voit attribuer une note. Cette note permet
-ensuite de définir des actions à effectuer. Quand un entête de mail est réécrit, SpamAssassin ajoute ses propres champs avec
-notamment le score, mais également d'autres données (Exemple ~\ref{fig:ex_score}). L'utilisateur peut paramétrer ce 
-score pour définir une marge de définitions des SPAMs(valeurs ''require``). Une fois ce score ateint le mail est considéré comme SPAM.
+ensuite de définir des actions à effectue. Quand un mail est considéré comme SPAM, SpamAssassin ajoute ses propres entêtes (Exemple ~\ref{fig:ex_score}):
+\begin{itemize}
+ \item ''-Spam-Level: \*\*\*\*\*\*\*\*\* '': Renseigne le score (ici 9)
+ \item -Spam-Status: Yes, score=9.0 required=5.0 tests=BAYES\_99,FROM\_EXCESS\_BASE64,FR\_HOWTOUNSUBSCRIBE,FR\_SPAMISLEGAL \dots : Indique des informations relatives aux test effectués et la configuration)
+\end{itemize}
 
+. L'utilisateur peut paramétrer ce score pour définir une marge de définitions des SPAMs(valeurs ''require``). Une fois ce score ateint le mail est considéré comme SPAM.
 C'est ensuite aux autres programmes d'utiliser ces données. Par exemple on pourrait configurer un MUA pour qu'il sépare 
 les SPAM par score suivant des filtres définit. 
 
-\begin{figure}[b]
- \includegraphics[width=\textwidth]{annexes/entete.png}
- \label{fig:ex_score}
- \caption{Exemple d'entête réécrit par SpamAssassin}
-\end{figure}
+\label{baye}
+\section{Le filtre bayésien}
+
+
+Une fonctionnalité qui est une des plus importantes caractérsitiques de SpamAssassin est sans doute son filtre
+bayésien\footnote{\href {https://fr.wikipedia.org/wiki/Th\%C3\%A9or\%C3\%A8me\_de_Bayes}{Théorème de Bayes}}.
+Il va permettre d'établir une connaissance des éléments qui constituent un SPAM et ceux qui n'en sont pas.
+\paragraph{Uilisation par SpamAssassin}
+
+Comme ennoncé plus haut, ce type de filtre fait partis de son arsenal de test anti-spam. Il va effectuer des tests 
+en utilisant les algorythmes de Bayes pour tester des mots et expressions(des''Tokens``), et baisser le score globale du mail si des tokens SPAM sont trouvés. 
+A l'inverse si des des tokens ''HAM`` (devant se trouver dans de bon mail) sont trouvés il va abaisser le score du mail, ce qui peut résulter en
+des score négatifs.
+\linebreak
+
+La directive \emph{bayes\_expiry\_max\_db\_size} peut être ajoutée au fichier de configuration générale 
+\emph{local.cf} pour définir une limite du nombre de tokens gardés dans la base(par défaut limité à 150 000tokens).
+
+\paragraph{Sa learn}
+Mais ce que permet surtout ce filtre c'est d'apprendre. En effet il va s'adapter aux utilisateurs. Les utilisateurs
+peuvent déclarer un courrier comme SPAM ou ''HAM'' et il sera alors pris en compte par le filtre bayésien de SpamAssasin.
+Le programme s'utilise de cette maniere:
+\begin{itemize}
+ \item sa-learn --spam /Chemin/dudossier
+ \item sa-learn --ham /Chemin/dudossier
+\end{itemize}
+Il faut pour garantir l'efficacité et coller aux besoins des utilisateurs que les mails soient ceux de l'utilisateurs
+
+\footnote{\href{https://spamassassin.apache.org/full/3.1.x/doc/sa-learn.html}{Documentation de sa learn}}
+
+
 
 \pagebreak
 
@@ -257,11 +290,11 @@ Les utilisateurs UNIX peuvent également avoir leurs propres configurations grâ
 qui se trouve dans le répertoire \emph{.spamassassin} de leurs home respectifs. 
 Par défaut, un certain nombre d’options sont prédéfinies. 
 
-\begin{figure}
+\begin{figure}[h]
  \centering
  \includegraphics[width=\textwidth]{./annexes/local_sample.png}
  % local_sample.png: 0x0 pixel, 300dpi, 0.00x0.00 cm, bb=
- \caption{Exemle de configuration basique de SpamAssassin}
+ \caption{Exemple de configuration basique de SpamAssassin}
  \label{fig:local_sample}
 \end{figure}
 
@@ -281,23 +314,106 @@ Les options les plus importantes sont les suivantes:
 \item 
 
 \end{description}
+\label{baye_conf}
 
 
+\subsection{Les règles}
 
-\appendix
+Il est possibles de définir des règles personnalisés. 
+
 \section{ Utilisation }
 
-\subsection{MTA}
 
 SpamAssassin peut être utilisé avec des Mail Transfert Agent comme Postfix. On peut par exemple contrôler les messages
-avec SpamAssassin juste après leurs reception par le demon SMTP. Mais la façon la plus répandue est d'utiliser procmail qui se charge
-de filtrer satiquement les mails et de la déposer dans leurs boites respectives. 
+avec SpamAssassin juste après leurs reception par le demon SMTPD. Mais la façon la plus répandue est d'utiliser le MDA qui se charge
+de filtrer satiquement les mails et de les déposer dans leurs boites mails respectives. 
 
-\subsubsection{procmail}
+\subsection{MDA}
 
-L'utilisation avec procmail est assez simple. Il faut modifier ou créer le fichier procmail.c qui se trouve dans le repertoire \emph{/etc.}
+Souvent couplé avec \emph{Postfix} (Le serveur de messagerie le plus utilisé dans le monde), procmail est le 
+Mail Delivery Agent(Egalement connu comme Local Delivery Agent, sont des programmes qui sont responsable
+de la délivrance des mails dans les boites des utilisateurs) que l'on trouve par défaut sur beaucoup de systèmes UNIX.
+L'utilisation avec procmail est assez simple. Il faut modifier ou créer le fichier procmail.c qui se trouve dans le repertoire \emph{/etc.}.
+Ainsi tout les messages passeront par SpamAssassin avant d'être délivéré par procmail. 
+\linebreak
+Un exemple de procmailrc minimale pour utiliser SPAM assassin:
+\begin{lstlisting}[frame=single]  
+DROPPRIVS=yes
 
+LOGFILE=/var/log/procmail.log
+VERBOSE=ON
 
+# appel du deamon SpamAssassin
+| /usr/bin/spamc -f
 
+ :0e
+{
+   EXITCODE=$?
+}
+\end{lstlisting}
+On peut tout à fait remplacer \emph{spamc} par \emph{spamassassin}. La seul différence étant au niveau des performances, 
+chaque appel à la commande \emph{spamassassin}créant un processus distinct, alors que \emph{spamc} fait appel au demon \emph{spamd}.
+A partir de là tout va passer à travers SpamAssassin.
 
-\end{document}          
+\pagebreak
+
+\subsection{SMTP}
+
+Filtrer les mail à l'entré est aussi possible. 
+        
+
+\part{Autour de SpamAssasin}
+
+\section{Comparatif avec des logiciels similaires à SpamAssassin}
+Naturellement, il existe d'autres logiciels qui ont la même fonctionnalité que SpamAssassin, avec leur propres avantages et inconvénients, en voici quelques uns : \\
+\\
+\textbf{Spampal}
+\begin{itemize}
+\item Avantages : Peut être couplé à SpamAssassin, fonctionne de manière transparente en tant que proxy POP ou IMAP, utilise beaucoup de blacklists piochées sur le net pour filtrer le spam.
+
+\item Inconvénients : SpamPal n'est pas totalement opérationnel au niveau du blocage par blacklist, et l'utilisation des blacklists DNS ralentissent et utilisent beaucoup de bande passante.
+\end{itemize}
+
+\textbf{K9}
+\begin{itemize}
+\item Avantages : Facile à mettre en place, léger.
+\item Inconvénients : Ne gère pas le protocole IMAP ni le cryptage SSL.
+\end{itemize}
+
+\textbf{POPFile}
+\begin{itemize}
+\item Avantages : Très efficace une fois mis en place
+\item Inconvénients : Compliqué à installer, ne gère pas les boites Hotmail
+\end{itemize}
+
+\textbf{Spamilihator}
+\begin{itemize}
+\item Avantages : Facile à installer, interface user-friendly
+\item Inconvénients : Doit apprendre de beaucoup de Spams reçus avant d'être efficace
+\end{itemize}
+
+\textbf{Bogofilter}
+\begin{itemize}
+\item Avantages : Analyse très rapide des mails, temps d'apprentissage des Spams beaucoup plus court, très bon complement à SpamAssassin.
+\item Inconvénients : Pas de réels inconvénients, Bogofilter reste le principal concurrent de SpamAssassin
+\end{itemize}
+
+\section{Quelques logiciels pouvant travailler avec SpamAssassin}
+Les principaux logiciels avec lesquels SpamAssassin doit être couplé pour tirer profit du maximum de ses capacités sont évidemment les clients/serveurs de messagerie, comme par exemple :
+\begin{itemize}
+\item Postfix
+\item Procmail
+\item qmail
+\item sendmail
+\item Exim
+\item Thunderbird
+\item kmail
+\item Evolution
+\end{itemize}
+
+Mais SpamAssassin peut aussi se coupler a d'autres logiciels anti-spam pour obtenir un meilleur résultat de filtrage. On peux notamment l'associer à SpamPal, mais le logiciel anti-spam auquel il est le plus souvent couplé est Bogofilter car il reste le concurrent le plus performant sur ce plan. Bien configurés, l'alliance des deux logiciels permet un filtrage quasi-optimal.
+\end{document}
+
+\section{Logiciel intégrant SpamAssin}
+
+\section{modules}
