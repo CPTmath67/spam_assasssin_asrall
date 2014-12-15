@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/Arch Linux) (preloaded format=pdflatex 2014.12.1)  15 DEC 2014 13:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/Arch Linux) (preloaded format=pdflatex 2014.12.1)  15 DEC 2014 13:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -6,20 +6,19 @@ entering extended mode
 (./rapport_spam_assassin.tex
 LaTeX2e <2014/05/01>
 Babel <3.9k> and hyphenation patterns for 79 languages loaded.
-(/usr/share/texmf-dist/tex/latex/base/report.cls
-Document Class: report 2007/10/19 v1.4h Standard LaTeX document class
+(/usr/share/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
 (/usr/share/texmf-dist/tex/latex/base/size11.clo
 File: size11.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
-\c@chapter=\count80
-\c@section=\count81
-\c@subsection=\count82
-\c@subsubsection=\count83
-\c@paragraph=\count84
-\c@subparagraph=\count85
-\c@figure=\count86
-\c@table=\count87
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
 \abovecaptionskip=\skip41
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
@@ -249,23 +248,23 @@ Language: frenchb 2014/06/21 v3.1a French support from the babel system
 
 (/usr/share/texmf-dist/tex/generic/babel/babel.def
 File: babel.def 2014/03/24 3.9k Babel common definitions
-\babel@savecnt=\count88
+\babel@savecnt=\count87
 \U@D=\dimen103
 )
 \l@acadian = a dialect from \language\l@french 
 \l@canadien = a dialect from \language\l@french 
 \FBcolonskip=\skip43
 \FBthinskip=\skip44
-\FB@interchartokenstateORI=\count89
+\FB@interchartokenstateORI=\count88
 Package babel Info: Making : an active character on input line 371.
 Package babel Info: Making ; an active character on input line 372.
 Package babel Info: Making ! an active character on input line 373.
 Package babel Info: Making ? an active character on input line 374.
 \FBguillskip=\skip45
-\FBguill@level=\count90
+\FBguill@level=\count89
 \FB@Mht=\dimen104
-\std@mcc=\count91
-\dec@mcc=\count92
+\std@mcc=\count90
+\dec@mcc=\count91
 \listindentFB=\skip46
 \labelwidthFB=\skip47
 \leftmarginFB=\skip48
@@ -299,7 +298,7 @@ Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
 (/usr/share/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
 Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 )
-\Gread@gobject=\count93
+\Gread@gobject=\count92
 ))
 \Gin@req@height=\dimen106
 \Gin@req@width=\dimen107
@@ -362,16 +361,16 @@ Package frenchb.ldf Warning: OT1 encoding should not be used for French.
 
 (/usr/share/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count94
+\scratchcounter=\count93
 \scratchdimen=\dimen110
 \scratchbox=\box26
-\nofMPsegments=\count95
-\nofMParguments=\count96
+\nofMPsegments=\count94
+\nofMParguments=\count95
 \everyMPshowfont=\toks19
-\MPscratchCnt=\count97
+\MPscratchCnt=\count96
 \MPscratchDim=\dimen111
-\MPnumerator=\count98
-\makeMPintoPDFobject=\count99
+\MPnumerator=\count97
+\makeMPintoPDFobject=\count98
 \everyMPtoPDFconversion=\toks20
 ) (/usr/share/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
@@ -427,142 +426,117 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <8> on input line 18.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 18.
- [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-<spamassassinintro.png, id=8, 335.2525pt x 148.555pt>
+<spamassassinintro.png, id=1, 335.2525pt x 148.555pt>
 File: spamassassinintro.png Graphic file (type png)
 
 <use spamassassinintro.png>
 Package pdftex.def Info: spamassassinintro.png used on input line 19.
 (pdftex.def)             Requested size: 335.25168pt x 148.55463pt.
+ [1
 
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 13.59999pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[1 <./spamassassinintro.png>] (./rapport_spam_assassin.toc
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./spamassassinintro.png>] 
+(./rapport_spam_assassin.toc
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <10.95> on input line 3.
+(Font)              <10.95> on input line 4.
 )
 \tf@toc=\write3
 \openout3 = `rapport_spam_assassin.toc'.
 
- [2
 
-] [3
 
-]
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.4521pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[2] [3]
 Overfull \hbox (23.84535pt too wide) in paragraph at lines 70--80
  [] 
  []
 
 
-Package Fancyhdr Warning: \headheight is too small (13.59999pt): 
- Make it at least 14.4521pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
+Overfull \hbox (8.43459pt too wide) in paragraph at lines 91--93
+[]\OT1/cmr/m/n/10.95 Le pro-jet Spa-mAs-sas-sin est ac-tif de-puis plus d'une d
+^^Secennie et est constam-
+ []
 
-[4] <annexes/lignes.png, id=27, 513.92pt x 321.2pt>
+<annexes/lignes.png, id=21, 513.92pt x 321.2pt>
 File: annexes/lignes.png Graphic file (type png)
  <use annexes/lignes.png>
-Package pdftex.def Info: annexes/lignes.png used on input line 103.
+Package pdftex.def Info: annexes/lignes.png used on input line 101.
 (pdftex.def)             Requested size: 360.0pt x 225.0051pt.
 
-Overfull \hbox (13.73245pt too wide) in paragraph at lines 112--165
+Overfull \hbox (13.73245pt too wide) in paragraph at lines 110--163
  [] 
  []
 
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <9> on input line 166.
+(Font)              <9> on input line 164.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 166.
-[5] [6]
-Overfull \hbox (8.40416pt too wide) in paragraph at lines 182--184
+(Font)              <5> on input line 164.
+[4] [5]
+Overfull \hbox (8.40416pt too wide) in paragraph at lines 180--182
 []\OT1/cmr/m/n/10.95 Comme une in-ter-face de pro-gra-ma-tion : des pro-grammes
  qui n^^Secessitent
  []
 
-[7 <./annexes/lignes.png>] [8
-
-]
-Overfull \hbox (3.5246pt too wide) in paragraph at lines 217--221
+[6 <./annexes/lignes.png>] [7]
+Overfull \hbox (3.5246pt too wide) in paragraph at lines 219--223
 []\OT1/cmr/m/n/10.95 Ce sont des des bases de donn^^Sees conte-nant des adresse
 s
  []
 
 
-Overfull \hbox (8.03674pt too wide) in paragraph at lines 217--221
+Overfull \hbox (8.03674pt too wide) in paragraph at lines 219--223
 \OT1/cmr/m/n/10.95 IP si-gnal^^Sees comme exp^^Sediant du SPAM ou mal confi-gur
 ^^See(Par exemple
  []
 
-[9]
-Overfull \hbox (10.26932pt too wide) in paragraph at lines 221--222
+
+Overfull \hbox (10.26932pt too wide) in paragraph at lines 223--224
 []\OT1/cmr/m/n/10.95 on peut sp^^Secifier des ca-ract^^Reres et langues comme
  []
 
-<annexes/entete.png, id=49, 702.625pt x 281.05pt>
+<annexes/entete.png, id=40, 702.625pt x 281.05pt>
 File: annexes/entete.png Graphic file (type png)
  <use annexes/entete.png>
-Package pdftex.def Info: annexes/entete.png used on input line 242.
+Package pdftex.def Info: annexes/entete.png used on input line 241.
 (pdftex.def)             Requested size: 360.0pt x 144.0026pt.
 
-[10]
-Overfull \hbox (2.32582pt too wide) in paragraph at lines 253--258
-\OT1/cmr/m/n/10.95 chier \OT1/cmr/m/it/10.95 lo-cal.cf\OT1/cmr/m/n/10.95 (exemp
-le  3[]), qui se trouve dans le re-per-toire '\OT1/cmr/m/it/10.95 /etc/spamassa
-ssin\OT1/cmr/m/n/10.95 .
- []
-
-<./annexes/local_sample.png, id=53, 552.0625pt x 241.90375pt>
-File: ./annexes/local_sample.png Graphic file (type png)
-
-<use ./annexes/local_sample.png>
-Package pdftex.def Info: ./annexes/local_sample.png used on input line 261.
-(pdftex.def)             Requested size: 360.0pt x 157.75232pt.
-
-Overfull \hbox (25.02135pt too wide) in paragraph at lines 275--276
-[]\OT1/cmr/m/n/10.95 Dans \OT1/cmr/m/it/10.95 /etc/default/spamassassin\OT1/cmr
-/m/n/10.95 ,
- []
-
-
-Overfull \hbox (2.52228pt too wide) in paragraph at lines 277--278
+[8]
+Overfull \hbox (2.52228pt too wide) in paragraph at lines 271--272
 []\OT1/cmr/m/n/10.95 D^^Sefinit le score
  []
 
 
-Overfull \hbox (8.98364pt too wide) in paragraph at lines 278--279
+Overfull \hbox (8.98364pt too wide) in paragraph at lines 272--273
 []\OT1/cmr/m/n/10.95 ] As-
  []
 
-[11] [12 <./annexes/entete.png> <./annexes/local_sample.png>]
-(./rapport_spam_assassin.aux) ) 
+[9 <./annexes/entete.png>] (./rapport_spam_assassin.aux) ) 
 Here is how much of TeX's memory you used:
- 3088 strings out of 493108
- 41839 string characters out of 6140725
- 120831 words of memory out of 5000000
- 6498 multiletter control sequences out of 15000+600000
- 11935 words of font info for 41 fonts, out of 8000000 for 9000
+ 3067 strings out of 493108
+ 41501 string characters out of 6140725
+ 119510 words of memory out of 5000000
+ 6479 multiletter control sequences out of 15000+600000
+ 11030 words of font info for 38 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 38i,12n,43p,334b,439s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.p
-fb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/shar
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmr17.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mr6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/sh
-are/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmsl10.pfb></usr/share/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmti10.pfb>
-Output written on rapport_spam_assassin.pdf (13 pages, 220006 bytes).
+ 38i,12n,43p,254b,439s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmcsc10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pf
+b></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.p
+fb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/share
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on rapport_spam_assassin.pdf (9 pages, 211427 bytes).
 PDF statistics:
- 97 PDF objects out of 1000 (max. 8388607)
- 65 compressed objects within 1 object stream
+ 83 PDF objects out of 1000 (max. 8388607)
+ 56 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 21 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 16 words of extra memory for PDF output out of 10000 (max. 10000000)
 

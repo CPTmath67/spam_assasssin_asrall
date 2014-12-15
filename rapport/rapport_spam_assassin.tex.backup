@@ -1,4 +1,4 @@
-\documentclass[a4paper,11pt]{report}
+\documentclass[a4paper,11pt]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[francais]{babel}
 \usepackage{graphicx}
@@ -95,9 +95,7 @@ pour s'adapter aux développements des méthodes qu'utilisent les spammeurs. C'e
 
 SpamAssasin contient environ 300 000 lignes de codes ce qui en fait un très gros projet( Graphique ~\ref{fig:code}).
 Le projet est à maturité et il ne grossit plus depuis plusieurs années, les développeurs se concentrant sur l'optimisation du code existant.
-Il y actuellement 23 développeurs pricnipaux, avec une répartition des lignes codes assez inégales, notamment deux développeurs qui ont fait la majorité du code( Tableau ~\ref{tab:devs}).
-Mais vu que c'est un projet libre et open source, chacun est libre de contribuer et forker le projet. Cela concerne aussi 
-bien les particuliers que les entreprises (En respectant bien sur les restirction de la licence Apache).
+Il y actuellement 23 développeurs, avec une répartition des lignes codes assez inégales, notamment deux développeurs qui ont fait la majorité du code( Tableau ~\ref{tab:devs})
 
 \begin{figure}
  \includegraphics[width=\textwidth]{annexes/lignes.png}
@@ -185,26 +183,25 @@ Il peut être utiliser de plusieurs manière:
 
 \pagebreak
 
-\part{Ses fonctionnalités}
+\section{Ses fonctionnalités}
 
-\section{Comment il filtre}
+\subsection{Comment il filtre}
 
 SpamAssassin reçoit des mails que lui redirigent d'autres programmes, y effectue des test pour déterminer si ce sont des SPAMS, 
 puis renvois les mails testés au programme qui les as envoyés.
 
-\subsection{Les test de SpamAssassin }
 \begin{description}
  \item [Champs d'entête] En se basant sur la forme des entêtes et en les comparant avec des schéma connus par SpamAssasin. En effet 
  on peut se base sur la façon dont certains systèmes de SPAMs construisent leurs messages pour les filtrer. 
  \item [Corps du message] Bien sur SpamAssasin permet de filtrer les mails suivant les mots et expressions qu'ils contiennent. 
  ``ceci n'est pas un SPAM'', ``Bonjour jes suis une princesse d'un royaume africain'', ``Venez chechez votre lot'', \dots sont des expressions
  typiques pour des SPAMs. 
- \item [Filtre bayésien] Filtrer les entêtes et le corps d'un message résultera toujours en de multiples faux positifs. C'est ici que le filtrage 
+ \item [Filtre bayésien] Filtrer les entêtes et le corps d'un message résultera toujours en de multiples faux positifs. C'est ici que le filtarge 
  bayésien se révèle interessant car il va prendre en considération ce que l'on considère comme SPam et non SPAM soit des ``bon mails'' (``HAM'' en anglais).
  Il va ensuite utiliser les repertoires de SPAMs connu et de ``HAM``  connus, pour y identifier les mots et phrases (Définits comme ''Tokens`` en anglais)
  qui n'apparaissent que dans les SPAMs et que dans les ''HAMs``.
  Un token SPAM trouvé resultant d'une hausse du score (voir \ref{score}) SPAM, un token résultant en une baisse de ce niveau. Ce filtrage permet d'être plus précis et d'éviter les faux positifs, 
- en ne se basant pas juste sur un mot ou une phrase mais des ensembles. 
+ en ne se basant sur un mot ou une phrase mais des ensembles. 
  \item [List noire/blanche automatique] SpamAssassin garde automatiquement une liste blanches des expéditeurs des mails.
  Pour chaque nouveau mail le programme compare le mail précédent provenant de la même adfresse mail et adresse IP.
  Comme précédemment si une adresse email a envoyé un SPAM, ce nouveau mail verra son score abaissé. A l'inverse si c'était un bon mail son score 
@@ -229,18 +226,15 @@ Spam Assassin effectue sur chaque mail qui lui est donné à traiter une série 
 Ce résultat sera ensuite utilisé par d'autres programmes pour déterminer des actions à entreprendre.
 
 
-\section{Le score} \label{score}
+\subsection{Le score} \label{score}
 C'est la base du signalement des SPAM de SpamAsassin. Un mail après avoir subi des test différents se voit attribuer une note. Cette note permet
 ensuite de définir des actions à effectuer. Quand un entête de mail est réécrit, SpamAssassin ajoute ses propres champs avec
 notamment le score, mais également d'autres données (Exemple ~\ref{fig:ex_score}). L'utilisateur peut paramétrer ce 
-score pour définir une marge de définitions des SPAMs(valeurs ''require``). Une fois ce score ateint le mail est considéré comme SPAM.
-
-Ensuite 
+score pour définir une marge de définitions des SPAMs(valeurs ''require``)
 
 \begin{figure}[b]
  \includegraphics[width=\textwidth]{annexes/entete.png}
  \label{fig:ex_score}
- \caption{Exemple d'entête réécrit par SpamAssassin}
 \end{figure}
 
 \pagebreak
@@ -249,18 +243,14 @@ Ensuite
 
 \subsection{Configuration}
 
-La configuration de Spamassassin se fait principalement à travers le fichier \emph{local.cf}(exemple ~\ref{fig:local_sample}), qui se trouve dans le 
+La configuration de Spamassassin se fait principalement à travers le fichier \emph{local.cf}, qui se trouve dans le 
 repertoire '\emph{/etc/spamassassin}.
 Les utilisateurs UNIX peuvent également avoir leurs propres configurations grâce au fichier \emph{user\_prefs}
 qui se trouve dans le répertoire \emph{.spamassassin} de leurs home respectifs. 
-Par défaut, un certain nombre d’options sont prédéfinies. 
 
 \begin{figure}
- \centering
- \includegraphics[width=\textwidth]{./annexes/local_sample.png}
- % local_sample.png: 0x0 pixel, 300dpi, 0.00x0.00 cm, bb=
- \caption{Exemle de configuration basique de SpamAssassin}
- \label{fig:local_sample}
+
+
 \end{figure}
 
 
@@ -268,32 +258,22 @@ Par défaut, un certain nombre d’options sont prédéfinies.
 
 Spam assassin possèdent plusieurs options dont certaine non activés par défaut. Il suffit de les ajouter aux fichiers 
 de configuration.
-Les options les plus importantes sont les suivantes:
+
+\paragraph{Préférences utilisateurs}
 
 \begin{description}
- \item [Désactiver les préférences utilisateurs]Dans \emph{/etc/default/spamassassin}, il faut changer la ligne d'options pour désactiver les préférences par utilisateur (qui serait normalement stockées dans leur home directory) et utiliser les préférences globales à la place. 
  \item [Options de score] \begin{description}
                            \item [required\_score n.nn (default:5)] Définit le score par défaut considérant un message comme SPAM. la valeur peut être un réel ou un entier
                            \item [score SYMBOLIC\_TEST\_NAME n.nn [ n.nn n.nn n.nn ]] Assigne les scores( voir ~\ref{score}) à un test donné.
                           \end{description}
-\item 
+
 
 \end{description}
 
 
 
 \appendix
-\section{ Utilisation }
 
-\subsection{MTA}
-
-SpamAssassin peut être utilisé avec des Mail Transfert Agent comme Postfix. On peut par exemple contrôler les messages
-avec SpamAssassin juste après leurs reception par le demon SMTP. Mais la façon la plus répandue est d'utiliser procmail qui se charge
-de filtrer satiquement les mails et de la déposer dans leurs boites respectives. 
-
-\subsubsection{procmail}
-
-L'utilisation avec procmail est assez simple. Il faut modifier ou créer le fichier procmail.c qui se trouve dans le repertoire \emph{/etc.}
 
 
 
