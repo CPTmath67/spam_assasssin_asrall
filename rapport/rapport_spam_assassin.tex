@@ -9,7 +9,7 @@
 % Title Page
 \title{SPAM ASSASSIN}
 \date{Décembre 2014}
-\author{Mathieu KERN -}
+\author{Mathieu KERN - Aymeric HINDERCHIETTE}
 \pagestyle{fancy}
 
 
@@ -27,8 +27,8 @@
 
 \section{Problématique }
 
-  Le mail(ou courriel) est aujourd'hui le moyen privilégié de communication à travers le monde. Massivement utilisé, 
-d'une certaine fiabilité et éprouvé par des décennies d'utilisation il reste le moyen le plus répandues pour 
+  Le mail (ou courriel) est aujourd'hui le moyen privilégié de communication à travers le monde. Massivement utilisé, 
+d'une certaine fiabilité et éprouvé par des décennies d'utilisation il reste le moyen le plus répandu pour 
 les communications entres les personnes. Malheureusement, mail est également aujourd'hui synonyme de spam, ces messages
 indésirables qui s'entassent dans nos boites mails. C'est ici qu'entre en jeu SpamAssassin.
 
@@ -39,12 +39,12 @@ Avant de poursuivre sur SpamAssassin, rappelons concrètement ce qu'est le SPAM 
 
 \begin{itemize}
  \item De par sa nature, un SPAM n'est pas désiré par l'utilisateur qui le reçoit. 
- \item La réception d'un SPAM résulte d'un envoi massif: une machine (souvent un bot) envoi le même message 
- à plusieurs destinataire sans aucun discernement. Cela s'oppose aux messages ciblés par exemple de commerçant,
- qui n’envoie que à leurs prospects.
- \item Son contenu n'est pas destiné spécifique à l'utilisateur (chaque personne reçoit le même contenu)
- \item Une importante liste de destinataires 
- \item Entête des messages souvent corrompues ou ne respectant pas les normes
+ \item La réception d'un SPAM résulte d'un envoi massif: une machine (souvent un bot) envoie le même message 
+ à plusieurs destinataires sans aucun discernement. Cela s'oppose aux messages ciblés par exemple de commerçant,
+ qui n’envoie que à leurs prospects (à but publicitaire ou informatif).
+ \item Son contenu n'est pas destiné spécifiquement à l'utilisateur (chaque personne reçoit le même contenu).
+ \item Une importante liste de destinataires.
+ \item Entête des messages souvent corrompues ou ne respectant pas les normes.
 \end{itemize}
 
 \paragraph{Statut légal}
@@ -88,7 +88,7 @@ EN outre tout ses projets sont distribués sous sa propre Licence, la licence Ap
 Cette licence met l’accent sur le copyright tout en restant bien sur une licence libre. Les objectifs principaux de la Fondation sont de protéger 
 juridiquement le travail des contributeurs et d'empêcher que la marque Apache soit utilisée illégalement.
 
-Le projet SpamAssassin est actif depuis plus d'une décennies et est constamment en développement 
+Le projet SpamAssassin est actif depuis plus d'une décennie et est constamment en développement 
 pour s'adapter aux développements des méthodes qu'utilisent les spammeurs. C'est en outre le programme anti-spam le plus utilisé à cause de son efficacité.
 
 \subsection{Développement}
@@ -168,14 +168,14 @@ bien les particuliers que les entreprises (En respectant bien sur les restirctio
 \end{center}
 \end{table}
 
-\subsection{Q'est ce que SpamAssassin}
+\subsection{Qu'est ce que SpamAssassin}
 
 SpamAssassin est un programme écrit en PERL dont le but est de filtrer activement les Emails en se basant sur des mécanismes internes. 
 SpamAssassin n'effectue aucune action envers les mails, il ajoute seulement des informations personnalisés
-qui peuvent être utilisée par d'autres programmes pour effectuer des actions sur les mails (les rangers des dossiers distincts, les supprimer, les bloquer, \dots)
+qui peuvent être utilisée par d'autres programmes pour effectuer des actions sur les mails (les ranger des dossiers distincts, les supprimer, les bloquer, \dots)
 
 
-Il peut être utiliser de plusieurs manière:
+Il peut être utilisé de plusieurs manières:
 \begin{itemize}
  \item En mode client, lancé à chaque fois que l'on fait appel à lui
  \item En mode demon grâce à \emph{spamd} , les appels au demon étant fait avec l'utilitaire \emph{spamc}.
@@ -189,10 +189,10 @@ Il peut être utiliser de plusieurs manière:
 
 \section{Comment il filtre}
 
-SpamAssassin reçoit des mails que lui redirigent d'autres programmes, y effectue des test pour déterminer si ce sont des SPAMS, 
-puis renvois les mails testés au programme qui les as envoyés.
+SpamAssassin reçoit des mails que lui redirigent d'autres programmes, y effectue des tests pour déterminer si ce sont des SPAMS, 
+puis renvoie les mails testés au programme qui les as envoyés.
 
-\section{Les test de SpamAssassin }
+\subsection{Les test de SpamAssassin }
 
 \begin{description}
  \item [Champs d'entête] En se basant sur la forme des entêtes et en les comparant avec des schéma connus par SpamAssasin. En effet 
