@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/Arch Linux) (preloaded format=pdflatex 2014.12.1)  16 DEC 2014 23:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/Arch Linux) (preloaded format=pdflatex 2014.12.1)  17 DEC 2014 00:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -478,45 +478,55 @@ File: listings.cfg 2014/03/04 1.5c listings configuration
 ))
 Package: listings 2014/03/04 1.5c (Carsten Heinz)
 
+(/usr/share/texmf-dist/tex/latex/tools/tabularx.sty
+Package: tabularx 2014/05/13 v2.10 `tabularx' package (DPC)
+\TX@col@width=\dimen118
+\TX@old@table=\dimen119
+\TX@old@col=\dimen120
+\TX@target=\dimen121
+\TX@delta=\dimen122
+\TX@cols=\count111
+\TX@ftn=\toks20
+)
 (./rapport_spam_assassin.aux)
 \openout1 = `rapport_spam_assassin.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Info: Redefining \degres on input line 18.
-LaTeX Info: Redefining \dots on input line 18.
-LaTeX Info: Redefining \up on input line 18.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Info: Redefining \degres on input line 19.
+LaTeX Info: Redefining \dots on input line 19.
+LaTeX Info: Redefining \up on input line 19.
 
 
 Package frenchb.ldf Warning: OT1 encoding should not be used for French.
 (frenchb.ldf)                Add \usepackage[T1]{fontenc} to the preamble
-(frenchb.ldf)                of your document, on input line 18.
+(frenchb.ldf)                of your document, on input line 19.
 
 (/usr/share/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count111
-\scratchdimen=\dimen118
+\scratchcounter=\count112
+\scratchdimen=\dimen123
 \scratchbox=\box28
-\nofMPsegments=\count112
-\nofMParguments=\count113
-\everyMPshowfont=\toks20
-\MPscratchCnt=\count114
-\MPscratchDim=\dimen119
-\MPnumerator=\count115
-\makeMPintoPDFobject=\count116
-\everyMPtoPDFconversion=\toks21
+\nofMPsegments=\count113
+\nofMParguments=\count114
+\everyMPshowfont=\toks21
+\MPscratchCnt=\count115
+\MPscratchDim=\dimen124
+\MPnumerator=\count116
+\makeMPintoPDFobject=\count117
+\everyMPtoPDFconversion=\toks22
 ) (/usr/share/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
 
@@ -533,7 +543,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 \AtBeginShipoutBox=\box29
-Package hyperref Info: Link coloring OFF on input line 18.
+Package hyperref Info: Link coloring OFF on input line 19.
 
 (/usr/share/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -541,29 +551,29 @@ Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 (/usr/share/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count117
+\c@section@level=\count118
 )
-LaTeX Info: Redefining \ref on input line 18.
-LaTeX Info: Redefining \pageref on input line 18.
-LaTeX Info: Redefining \nameref on input line 18.
+LaTeX Info: Redefining \ref on input line 19.
+LaTeX Info: Redefining \pageref on input line 19.
+LaTeX Info: Redefining \nameref on input line 19.
 
 (./rapport_spam_assassin.out) (./rapport_spam_assassin.out)
 \@outlinefile=\write3
 \openout3 = `rapport_spam_assassin.out'.
 
-\c@lstlisting=\count118
+\c@lstlisting=\count119
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 21.
+(Font)              <12> on input line 22.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 21.
+(Font)              <8> on input line 22.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 21.
+(Font)              <6> on input line 22.
 
 <spamassassinintro.png, id=124, 335.2525pt x 148.555pt>
 File: spamassassinintro.png Graphic file (type png)
 
 <use spamassassinintro.png>
-Package pdftex.def Info: spamassassinintro.png used on input line 21.
+Package pdftex.def Info: spamassassinintro.png used on input line 22.
 (pdftex.def)             Requested size: 335.25168pt x 148.55463pt.
  [1
 
@@ -582,166 +592,172 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[2] [3]
-Overfull \hbox (23.84535pt too wide) in paragraph at lines 72--82
+[2] [3] [4]
+Overfull \hbox (33.36577pt too wide) in paragraph at lines 73--84
  [] 
  []
 
 
-Overfull \hbox (8.43459pt too wide) in paragraph at lines 95--97
+Overfull \hbox (1.66907pt too wide) in paragraph at lines 90--93
+ []\OT1/cmr/bx/n/10.95 La li-cence apache[] \OT1/cmr/m/n/10.95 Spa-mA-sas-sin e
+st au-jour-d'hui sous le gi-ron de la Apache
+ []
+
+
+Overfull \hbox (8.43459pt too wide) in paragraph at lines 99--101
 []\OT1/cmr/m/n/10.95 Le pro-jet Spa-mAs-sas-sin est ac-tif de-puis plus d'une d
 ^^Secennie et est constam-
  []
 
-<annexes/lignes.png, id=184, 513.92pt x 321.2pt>
+<annexes/lignes.png, id=188, 513.92pt x 321.2pt>
 File: annexes/lignes.png Graphic file (type png)
  <use annexes/lignes.png>
-Package pdftex.def Info: annexes/lignes.png used on input line 108.
+Package pdftex.def Info: annexes/lignes.png used on input line 112.
 (pdftex.def)             Requested size: 360.0pt x 225.0051pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Overfull \hbox (13.73245pt too wide) in paragraph at lines 117--170
+Overfull \hbox (13.73245pt too wide) in paragraph at lines 121--174
  [] 
  []
 
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <9> on input line 171.
+(Font)              <9> on input line 175.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 171.
-[4]
-Overfull \hbox (8.40416pt too wide) in paragraph at lines 188--190
+(Font)              <5> on input line 175.
+[5]
+Overfull \hbox (8.40416pt too wide) in paragraph at lines 192--194
 []\OT1/cmr/m/n/10.95 Comme une in-ter-face de pro-gra-ma-tion : des pro-grammes
  qui n^^Secessitent
  []
 
-[5 <./annexes/lignes.png>] [6]
-Overfull \hbox (4.60364pt too wide) in paragraph at lines 209--215
+[6 <./annexes/lignes.png>] [7]
+Overfull \hbox (4.60364pt too wide) in paragraph at lines 213--219
 []\OT1/cmr/m/n/10.95 Filtrer les ent^etes et le corps d'un
  []
 
 
-Overfull \hbox (3.5246pt too wide) in paragraph at lines 224--228
+Overfull \hbox (3.5246pt too wide) in paragraph at lines 228--232
 []\OT1/cmr/m/n/10.95 Ce sont des des bases de donn^^Sees conte-nant des adresse
 s
  []
 
 
-Overfull \hbox (8.03674pt too wide) in paragraph at lines 224--228
+Overfull \hbox (8.03674pt too wide) in paragraph at lines 228--232
 \OT1/cmr/m/n/10.95 IP si-gnal^^Sees comme exp^^Sediant du SPAM ou mal confi-gur
 ^^See(Par exemple
  []
 
 
-Overfull \hbox (10.26932pt too wide) in paragraph at lines 228--229
+Overfull \hbox (10.26932pt too wide) in paragraph at lines 232--233
 []\OT1/cmr/m/n/10.95 on peut sp^^Secifier des ca-ract^^Reres et langues comme
  []
 
-[7]
+[8]
 
-LaTeX Warning: Reference `fig:ex_score' on page 8 undefined on input line 242.
+LaTeX Warning: Reference `fig:ex_score' on page 9 undefined on input line 246.
 
 
-Overfull \hbox (337.8323pt too wide) in paragraph at lines 245--246
+Overfull \hbox (337.8323pt too wide) in paragraph at lines 249--250
 []\OT1/cmr/m/n/10.95 -Spam-Status : Yes, score=9.0 re-qui-red=5.0 tests=BAYES[]
 99,FROM[]EXCESS[]BASE64,FR[]HOWTOUNSUBSCRIBE,FR[]SPAMISLEGAL
  []
 
 
-Overfull \hbox (30.94588pt too wide) in paragraph at lines 262--267
+Overfull \hbox (30.94588pt too wide) in paragraph at lines 266--271
 \OT1/cmr/m/n/10.95 uti-li-sant les al-go-rithmes de Bayes pour tes-ter des mots
  et ex-pres-sions(des''Tokens``),
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 262--267
+Underfull \hbox (badness 10000) in paragraph at lines 266--271
 \OT1/cmr/m/n/10.95 n^^Segatifs.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 262--267
+Underfull \hbox (badness 10000) in paragraph at lines 266--271
 
  []
 
-[8]
-Overfull \hbox (12.11794pt too wide) in paragraph at lines 276--283
+[9]
+Overfull \hbox (12.11794pt too wide) in paragraph at lines 280--287
 \OT1/cmr/m/n/10.95 mails soient ceux de l'uti-li-sa-teur et repr^^Sesentatif de
  ce qu'il re^^Xcoit r^^Seguli^^Rerement.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 287--296
+Underfull \hbox (badness 10000) in paragraph at lines 291--300
 \OT1/cmr/m/n/10.95 dans la base(par d^^Sefaut li-mit^^Se ^^Ra 150 000to-kens).
  []
 
 
-Overfull \hbox (2.32582pt too wide) in paragraph at lines 309--317
+Overfull \hbox (2.32582pt too wide) in paragraph at lines 313--321
 \OT1/cmr/m/n/10.95 chier \OT1/cmr/m/it/10.95 lo-cal.cf\OT1/cmr/m/n/10.95 (exemp
 le  []2[]), qui se trouve dans le r^^Sepertoire '\OT1/cmr/m/it/10.95 /etc/spama
 ssassin\OT1/cmr/m/n/10.95 .
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 309--317
+Underfull \hbox (badness 10000) in paragraph at lines 313--321
 \OT1/cmr/m/n/10.95 pr^^Sed^^Sefinies.
  []
 
-[9]
-Overfull \hbox (1.0553pt too wide) in paragraph at lines 324--325
+[10]
+Overfull \hbox (1.0553pt too wide) in paragraph at lines 328--329
 \OT1/cmr/m/it/10.95 sas-sin\OT1/cmr/m/n/10.95 , il faut chan-ger la ligne d'op-
 tions pour d^^Sesactiver les pr^^Sef^^Serences
  []
 
 
-Overfull \hbox (2.52228pt too wide) in paragraph at lines 326--327
+Overfull \hbox (2.52228pt too wide) in paragraph at lines 330--331
 []\OT1/cmr/m/n/10.95 D^^Sefinit le score
  []
 
 
-Overfull \hbox (8.98364pt too wide) in paragraph at lines 327--328
+Overfull \hbox (8.98364pt too wide) in paragraph at lines 331--332
 []\OT1/cmr/m/n/10.95 ] As-
  []
 
-<./annexes/local_sample.png, id=238, 552.0625pt x 241.90375pt>
+<./annexes/local_sample.png, id=242, 552.0625pt x 241.90375pt>
 File: ./annexes/local_sample.png Graphic file (type png)
 
 <use ./annexes/local_sample.png>
-Package pdftex.def Info: ./annexes/local_sample.png used on input line 333.
+Package pdftex.def Info: ./annexes/local_sample.png used on input line 337.
 (pdftex.def)             Requested size: 360.0pt x 157.75232pt.
- [10]
+ [11]
 (/usr/share/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2014/03/04 1.5c listings language file
 )
-Underfull \hbox (badness 10000) in paragraph at lines 346--353
+Underfull \hbox (badness 10000) in paragraph at lines 350--357
 \OT1/cmr/m/n/10.95 m^eme.
  []
 
 
-Overfull \hbox (136.27856pt too wide) in paragraph at lines 354--355
+Overfull \hbox (136.27856pt too wide) in paragraph at lines 358--359
 [][] 
  []
 
 
-Overfull \hbox (136.27856pt too wide) in paragraph at lines 361--362
+Overfull \hbox (136.27856pt too wide) in paragraph at lines 365--366
 [][] 
  []
 
-[11 <./annexes/local_sample.png>]
+[12 <./annexes/local_sample.png>]
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <9> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 368.
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 372.
 
-Overfull \hbox (136.27856pt too wide) in paragraph at lines 391--392
+Overfull \hbox (136.27856pt too wide) in paragraph at lines 395--396
 [][] 
  []
 
 
-Overfull \hbox (136.27856pt too wide) in paragraph at lines 393--395
+Overfull \hbox (136.27856pt too wide) in paragraph at lines 397--399
 [][] 
  []
 
-[12]
+[13]
 
 ! Package inputenc Error: Unicode char \u8:�\expandafter not set up for use wit
 h LaTeX.
@@ -750,7 +766,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.425 ...-- Je n'accepte que les mail en Français
+l.429 ...-- Je n'accepte que les mail en Français
                                                   
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -764,47 +780,63 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.425 ...-- Je n'accepte que les mail en Français
+l.429 ...-- Je n'accepte que les mail en Français
                                                   
 You need to provide a definition with \DeclareInputText 
 or \DeclareInputMath before using this key.
 
 
-Overfull \hbox (1.01292pt too wide) in paragraph at lines 433--435
+Overfull \hbox (1.01292pt too wide) in paragraph at lines 437--439
 []\OT1/cmr/m/n/10.95 Une des-crip-tion plus compl^^Rete, qui est uti-lis^^Se da
 ns les rap-ports g^^Sen^^Ser^^Ses
  []
 
-[13]
-Underfull \hbox (badness 10000) in paragraph at lines 480--482
+[14]
+Underfull \hbox (badness 10000) in paragraph at lines 484--486
 \OT1/cmr/m/it/10.95 /etc/s-pa-mas-sas-sin/-lo-cal/.cf\OT1/cmr/m/n/10.95 .Exempl
 e :
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 480--482
+Underfull \hbox (badness 10000) in paragraph at lines 484--486
 
  []
 
-[14]
-Overfull \hbox (2.93207pt too wide) in paragraph at lines 527--534
+[15]
+Overfull \hbox (90.54826pt too wide) in alignment at lines 538--538
+[][][][][][][] 
+ []
+
+
+Overfull \hbox (17.0pt too wide) in paragraph at lines 538--539
+[][] 
+ []
+
+[16]
+Overfull \hbox (2.93207pt too wide) in paragraph at lines 553--560
 \OT1/cmr/m/n/10.95 cal De-li-very Agent, sont des pro-grammes qui sont res-pon-
 sable de la d^^Selivrance
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 527--534
+Underfull \hbox (badness 10000) in paragraph at lines 553--560
 \OT1/cmr/m/n/10.95 proc-mail.
  []
 
-[15] [16] [17]
-Overfull \hbox (15.51381pt too wide) in paragraph at lines 592--594
+[17] [18]
+Overfull \hbox (15.51381pt too wide) in paragraph at lines 618--620
 []\OT1/cmr/m/n/10.95 Ce plu-gin est un ou-til de grey-list, qui s'ex^^Secute en
  deux phases.Son
  []
 
-[18]
-Overfull \hbox (31.58173pt too wide) in paragraph at lines 621--625
+
+Overfull \hbox (4.54126pt too wide) in paragraph at lines 636--643
+\OT1/cmr/m/n/10.95 per-met d'uti-li-ser les propres tech-no-lo-gies et an-ti-sp
+am de cette derni^^Rere.
+ []
+
+[19]
+Overfull \hbox (31.58173pt too wide) in paragraph at lines 647--651
 \OT1/cmr/m/n/10.95 d'IPs, des tech-no-lo-gies d'al-go-rithmes auto-apprenants d
 is-tribu^^Ses(distributed
  []
@@ -815,30 +847,30 @@ Package Fancyhdr Warning: \headheight is too small (14.4521pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[19]
-Overfull \hbox (13.59813pt too wide) in paragraph at lines 665--666
+[20]
+Overfull \hbox (13.59813pt too wide) in paragraph at lines 691--692
 []
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 672.
-[20]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 672.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 700.
+[21]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 700.
  (./rapport_spam_assassin.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 672.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 672.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 700.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 700.
 Package rerunfilecheck Info: File `rapport_spam_assassin.out' has not changed.
-(rerunfilecheck)             Checksum: 0D0460907BD8AC566E2B5ABB8874BB40;2002.
+(rerunfilecheck)             Checksum: 78FAEA085DD182E009C05EBB6744DE59;2005.
 
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 672.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 700.
  ) 
 Here is how much of TeX's memory you used:
- 8761 strings out of 493108
- 122642 string characters out of 6140725
- 325221 words of memory out of 5000000
- 11980 multiletter control sequences out of 15000+600000
+ 8810 strings out of 493108
+ 123206 string characters out of 6140725
+ 326306 words of memory out of 5000000
+ 12025 multiletter control sequences out of 15000+600000
  11365 words of font info for 40 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  35i,13n,43p,597b,2203s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -856,10 +888,10 @@ ublic/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/c
 m/cmr9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></u
 sr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texmf
 -dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on rapport_spam_assassin.pdf (20 pages, 275283 bytes).
+Output written on rapport_spam_assassin.pdf (21 pages, 277374 bytes).
 PDF statistics:
- 454 PDF objects out of 1000 (max. 8388607)
- 410 compressed objects within 5 object streams
- 150 named destinations out of 1000 (max. 500000)
+ 460 PDF objects out of 1000 (max. 8388607)
+ 415 compressed objects within 5 object streams
+ 151 named destinations out of 1000 (max. 500000)
  256 words of extra memory for PDF output out of 10000 (max. 10000000)
 

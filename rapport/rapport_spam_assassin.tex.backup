@@ -7,6 +7,7 @@
 \usepackage{colortbl}
 \usepackage{hyperref}
 \usepackage{listings}
+\usepackage{tabularx}
 \lstset{basicstyle=\footnotesize\ttfamily,breaklines=true}
 % Title Page
 \title{SPAM ASSASSIN}
@@ -343,7 +344,6 @@ Ces règles peuvent se mettre dans le fichier de configuration principal (/etc/s
 une configuration globale.
 Ce sont ces règles qui vont être vérifiés à chaque message transmis à SpamAssassin, et être utilisés pour les test.
 
-
 Certaines sont configurés par défaut et permettent de
 bien repérer les SPAMs dans la majorité des cas. Cependant pour permettre aux utilisateurs de répondre à des besoins spécifiques,
 il est possible d'en déterminer sois même.
@@ -396,13 +396,10 @@ score FR_MAILER_2                       4.0
 \end{lstlisting}
 \end{tiny}
 Dans ce fichier de configuration, on peux voir que l'on peut influer le score selon certains mots présent dans le mail inspecté, comme dans la première règle par exemple, ou les mots "Conformément" ou "En vertu" rapportent 0.5 points au mail. Le mot "article" en rapporte 0.4, et si il y a quelque chose derrière la chaîne de caractère "34.", cela rapporte 0.4 points aussi. Ce qui fait un total de 1.3 points, On peux voir que le score du mail est de 2.5, si le mail est un spam, il n'a qu'une marge de 1.2 points avant d'être considéré comme tel.
-On peux ajouter un nom à notre règle avec l'option describe.
-On peux ajouter la langue utilisée pour cette règle.
-Pour finir on définit le score.
 
-On peux définir des mots ou des lettres précises en utilisant les expressions régulières de Perl :
+Explication de certaine directives présentes. 
 
-Par exemple, avec cette expression régulière, le mail sera filtré si il contient "agra", comme dans "viagra", même si ce mot est "agrafe" ( Le /i ignore la casse) :
+En utilisant cette expression régulière, le mail sera filtré si il contient "agra" dans son corps, comme dans "viagra", même si ce mot est "agrafe" ( Le /i ignore la casse) :
 \begin{lstlisting}
 body LOCAL_DEM_VIAGRA /agra/i  
 \end{lstlisting}
@@ -473,10 +470,21 @@ La directive \emph{score} va déterminer le score à appliquer au mail si le tes
 le score va correspondre aux 4 conditions définit juste au dessus ( Voir au dessus \ref{cond} ). Si cette directive n'est definit qu'avec
 un score, il sera appliqué quelque sois la condition.
 
-\paragraph{Les test par défaut}
 SpamAssasin est fournis par défaut avec certains tests. Ces tests sont regroupés par type dans des fichiers contenant les règles (ruleset), le score de chaque test 
-étant regroupé dans un seul fichier. Ils sont stockées par défaut dans \emph{/usr/share/spamassassin}.
+étant regroupé dans un seul fichier. Ils sont stockées par défaut dans \emph{/usr/share/spamassassin}. On peut
+a jouter d'autres ``canaux'' distribuant des règles, grâce à sa-update. Cette fonction automatise la mise
+à jour des règles de SpamAsassin. Par défaut seulement \emph{updates.spamassassin.org} est définit comme canal
+(ses règles sont mis à jour à chaque nouvelle version). En appelant \emph{sa-update}, toute les règles 
+des canaux ajoutés seront mis à jour. Cela permet de tenir automatiquement ses règles à jours au besoin.
 
+\paragraph{modifier le score}
+Il est possible de modifier le score d'un test déjà présent par défaut.
+Il suffit de rajouter la directive et le nom du test dans le fichier \emph{ /etc/spamassassin/local/.cf}.Exemple:\linebreak
+\begin{lstlisting}
+score NOM\_TEST 3
+\end{lstlisting}
+Va changer le score du test \emph{NOM\_TEST} à la valeur 3. On peut faire la même manière pour modifier 
+la description d'un test.
 \subsection{Fonctionnement de Liste blanche automatique(AWL)}
 
 Quand cette option est activée, SpamAssassin va garder automatiquement une base de données contenant les IPs des expéditeurs des courriers reçus ainsi 
@@ -504,7 +512,25 @@ varie de 0 à 1. Il est par défaut de 0.5, ce qui va mettre le score final appl
 de l'expéditeur et celui du message. 
 
 Pour donner plus d'importance au score moyen de l'expéditeur on va augmenter ce coefficient. Quand ce coefficient 
-est mis à 1, le score moyen de l'expéditeur va devenir celui du message.
+est mis à 1, le score moyen de l'expéditeur va devenir celui du message. Pour diminuer l'importance du score moyen de l'expéditeur 
+on va abaisser le coefficient.Quand le coefficient est définit à 0 le score du SPAM restera inchangé. 
+
+
+{%
+\newcommand{\mc}[3]{\multicolumn{#1}{#2}{#3}}
+
+\begin{tabularx}{\textwidth}[]{l|l|l|l|l|l|l}
+Message & Score avant AWL& Score moyen de l'expediteur & \mc{4}{l}{Score  après passage de l'AWL}\\ \hline
+&  &  & 0 & .5 & .75 & 1\\
+1 & 2 & (aucun) & 2 & 2 & 2 & 2\\
+2 & 1 & 2 & 1 & 1.5 & 1.75 & 2\\
+3 & 1 & 1.5 & 1 & 1.25 & 1.375 & 1.5\\
+4 & 0 & 1.33 & 0 & 0.67 & 1.00 & 1.33\\
+5 & 2 & 1.0 & 2 & 1.5 & 1.25 & 1.0\\
+6 & 6 & 1.2 & 6 & 3.6 & 2.4 & 1.2
+\end{tabularx}
+
+}%
 
 
 
