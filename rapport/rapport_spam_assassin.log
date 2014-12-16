@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/Arch Linux) (preloaded format=pdflatex 2014.12.1)  16 DEC 2014 03:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/Arch Linux) (preloaded format=pdflatex 2014.12.1)  16 DEC 2014 17:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -559,7 +559,7 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 21.
 
-<spamassassinintro.png, id=96, 335.2525pt x 148.555pt>
+<spamassassinintro.png, id=112, 335.2525pt x 148.555pt>
 File: spamassassinintro.png Graphic file (type png)
 
 <use spamassassinintro.png>
@@ -588,182 +588,192 @@ Overfull \hbox (23.84535pt too wide) in paragraph at lines 72--82
  []
 
 
-Overfull \hbox (8.43459pt too wide) in paragraph at lines 93--95
+Overfull \hbox (8.43459pt too wide) in paragraph at lines 95--97
 []\OT1/cmr/m/n/10.95 Le pro-jet Spa-mAs-sas-sin est ac-tif de-puis plus d'une d
 ^^Secennie et est constam-
  []
 
-<annexes/lignes.png, id=148, 513.92pt x 321.2pt>
+<annexes/lignes.png, id=168, 513.92pt x 321.2pt>
 File: annexes/lignes.png Graphic file (type png)
  <use annexes/lignes.png>
-Package pdftex.def Info: annexes/lignes.png used on input line 105.
+Package pdftex.def Info: annexes/lignes.png used on input line 107.
 (pdftex.def)             Requested size: 360.0pt x 225.0051pt.
 
-Overfull \hbox (13.73245pt too wide) in paragraph at lines 114--167
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Overfull \hbox (13.73245pt too wide) in paragraph at lines 116--169
  [] 
  []
 
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <9> on input line 168.
+(Font)              <9> on input line 170.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 168.
+(Font)              <5> on input line 170.
 [4] [5]
-Overfull \hbox (8.40416pt too wide) in paragraph at lines 185--187
+Overfull \hbox (8.40416pt too wide) in paragraph at lines 187--189
 []\OT1/cmr/m/n/10.95 Comme une in-ter-face de pro-gra-ma-tion : des pro-grammes
  qui n^^Secessitent
  []
 
 [6 <./annexes/lignes.png>]
-Overfull \hbox (4.60364pt too wide) in paragraph at lines 206--212
+Overfull \hbox (4.60364pt too wide) in paragraph at lines 208--214
 []\OT1/cmr/m/n/10.95 Filtrer les ent^etes et le corps d'un
  []
 
 [7]
-Overfull \hbox (3.5246pt too wide) in paragraph at lines 221--225
+Overfull \hbox (3.5246pt too wide) in paragraph at lines 223--227
 []\OT1/cmr/m/n/10.95 Ce sont des des bases de donn^^Sees conte-nant des adresse
 s
  []
 
 
-Overfull \hbox (8.03674pt too wide) in paragraph at lines 221--225
+Overfull \hbox (8.03674pt too wide) in paragraph at lines 223--227
 \OT1/cmr/m/n/10.95 IP si-gnal^^Sees comme exp^^Sediant du SPAM ou mal confi-gur
 ^^See(Par exemple
  []
 
 
-Overfull \hbox (10.26932pt too wide) in paragraph at lines 225--226
+Overfull \hbox (10.26932pt too wide) in paragraph at lines 227--228
 []\OT1/cmr/m/n/10.95 on peut sp^^Secifier des ca-ract^^Reres et langues comme
  []
 
 
-LaTeX Warning: Reference `fig:ex_score' on page 8 undefined on input line 239.
+LaTeX Warning: Reference `fig:ex_score' on page 8 undefined on input line 241.
 
 
-Overfull \hbox (337.8323pt too wide) in paragraph at lines 242--243
+Overfull \hbox (337.8323pt too wide) in paragraph at lines 244--245
 []\OT1/cmr/m/n/10.95 -Spam-Status : Yes, score=9.0 re-qui-red=5.0 tests=BAYES[]
 99,FROM[]EXCESS[]BASE64,FR[]HOWTOUNSUBSCRIBE,FR[]SPAMISLEGAL
  []
 
 
-Overfull \hbox (12.84506pt too wide) in paragraph at lines 245--248
+Overfull \hbox (12.84506pt too wide) in paragraph at lines 247--250
 []\OT1/cmr/m/n/10.95 . L'uti-li-sa-teur peut pa-ram^^Setrer ce score pour d^^Se
 finir une marge de d^^Sefinitions
  []
 
 [8]
-Overfull \hbox (30.94588pt too wide) in paragraph at lines 258--263
+Overfull \hbox (30.94588pt too wide) in paragraph at lines 260--265
 \OT1/cmr/m/n/10.95 uti-li-sant les al-go-rithmes de Bayes pour tes-ter des mots
  et ex-pres-sions(des''Tokens``),
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 258--263
+Underfull \hbox (badness 10000) in paragraph at lines 260--265
 \OT1/cmr/m/n/10.95 n^^Segatifs.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 258--263
+Underfull \hbox (badness 10000) in paragraph at lines 260--265
 
  []
 
 
-Overfull \hbox (12.11794pt too wide) in paragraph at lines 272--279
+Overfull \hbox (12.11794pt too wide) in paragraph at lines 274--281
 \OT1/cmr/m/n/10.95 mails soient ceux de l'uti-li-sa-teur et repr^^Sesentatif de
  ce qu'il re^^Xcoit r^^Seguli^^Rerement.
  []
 
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 280.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 282.
 
 (/usr/share/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 280.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 282.
 
-Underfull \hbox (badness 10000) in paragraph at lines 283--292
+Underfull \hbox (badness 10000) in paragraph at lines 285--294
 \OT1/cmr/m/n/10.95 dans la base(par d^^Sefaut li-mit^^Se ^^Ra 150 000to-kens).
  []
 
 [9] [10]
-Overfull \hbox (2.32582pt too wide) in paragraph at lines 299--304
+Overfull \hbox (2.32582pt too wide) in paragraph at lines 301--306
 \OT1/cmr/m/n/10.95 chier \OT1/cmr/m/it/10.95 lo-cal.cf\OT1/cmr/m/n/10.95 (exemp
 le  []2[]), qui se trouve dans le r^^Sepertoire '\OT1/cmr/m/it/10.95 /etc/spama
 ssassin\OT1/cmr/m/n/10.95 .
  []
 
-<./annexes/local_sample.png, id=203, 552.0625pt x 241.90375pt>
+<./annexes/local_sample.png, id=224, 552.0625pt x 241.90375pt>
 File: ./annexes/local_sample.png Graphic file (type png)
 
 <use ./annexes/local_sample.png>
-Package pdftex.def Info: ./annexes/local_sample.png used on input line 307.
+Package pdftex.def Info: ./annexes/local_sample.png used on input line 309.
 (pdftex.def)             Requested size: 360.0pt x 157.75232pt.
 
-Overfull \hbox (1.0553pt too wide) in paragraph at lines 321--322
+Overfull \hbox (1.0553pt too wide) in paragraph at lines 323--324
 \OT1/cmr/m/it/10.95 sas-sin\OT1/cmr/m/n/10.95 , il faut chan-ger la ligne d'op-
 tions pour d^^Sesactiver les pr^^Sef^^Serences
  []
 
 
-Overfull \hbox (2.52228pt too wide) in paragraph at lines 323--324
+Overfull \hbox (2.52228pt too wide) in paragraph at lines 325--326
 []\OT1/cmr/m/n/10.95 D^^Sefinit le score
  []
 
 
-Overfull \hbox (8.98364pt too wide) in paragraph at lines 324--325
+Overfull \hbox (8.98364pt too wide) in paragraph at lines 326--327
 []\OT1/cmr/m/n/10.95 ] As-
  []
 
 [11 <./annexes/local_sample.png>]
-Overfull \hbox (2.93207pt too wide) in paragraph at lines 345--352
+Overfull \hbox (2.93207pt too wide) in paragraph at lines 347--354
 \OT1/cmr/m/n/10.95 cal De-li-very Agent, sont des pro-grammes qui sont res-pon-
 sable de la d^^Selivrance
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 345--352
+Underfull \hbox (badness 10000) in paragraph at lines 347--354
 \OT1/cmr/m/n/10.95 proc-mail.
  []
 
-[12]
-Overfull \hbox (15.51381pt too wide) in paragraph at lines 401--403
-[]\OT1/cmr/m/n/10.95 Ce plu-gin est un ou-til de grey-list, qui s'exe-cute en d
-eux phases.Son
+[12] [13]
+Overfull \hbox (15.51381pt too wide) in paragraph at lines 404--406
+[]\OT1/cmr/m/n/10.95 Ce plu-gin est un ou-til de grey-list, qui s'ex^^Secute en
+ deux phases.Son
  []
 
-[13]
-Underfull \hbox (badness 10000) in paragraph at lines 420--423
 
+Overfull \hbox (31.58173pt too wide) in paragraph at lines 433--437
+\OT1/cmr/m/n/10.95 d'IPs, des tech-no-lo-gies d'al-go-rithmes auto-apprenants d
+is-tribu^^Ses(distributed
  []
 
+[14]
 
 Package Fancyhdr Warning: \headheight is too small (14.4521pt): 
  Make it at least 28.05211pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[14]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 469.
- [15]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 469.
+[15]
+Overfull \hbox (13.59813pt too wide) in paragraph at lines 477--478
+[]
+ []
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 484.
+[16]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 484.
  (./rapport_spam_assassin.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 469.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 469.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 484.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 484.
 Package rerunfilecheck Info: File `rapport_spam_assassin.out' has not changed.
-(rerunfilecheck)             Checksum: 2B0F29F2CB79F40FDEF6003457661969;1490.
+(rerunfilecheck)             Checksum: 0C1DF7D6FE75C63BF30377FB2FFE7C7D;1742.
 
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 469.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 484.
  ) 
 Here is how much of TeX's memory you used:
- 8306 strings out of 493108
- 117336 string characters out of 6140725
- 218708 words of memory out of 5000000
- 11609 multiletter control sequences out of 15000+600000
+ 8317 strings out of 493108
+ 117495 string characters out of 6140725
+ 218711 words of memory out of 5000000
+ 11612 multiletter control sequences out of 15000+600000
  11030 words of font info for 38 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 34i,12n,43p,417b,1257s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 34i,12n,43p,419b,1257s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exi
 st, replaced by a fixed one
 
@@ -777,10 +787,10 @@ fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/publ
 ic/amsfonts/cm/cmr9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/c
 msl10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></us
 r/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on rapport_spam_assassin.pdf (15 pages, 225328 bytes).
+Output written on rapport_spam_assassin.pdf (16 pages, 230849 bytes).
 PDF statistics:
- 299 PDF objects out of 1000 (max. 8388607)
- 263 compressed objects within 3 object streams
- 69 named destinations out of 1000 (max. 500000)
- 200 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 333 PDF objects out of 1000 (max. 8388607)
+ 296 compressed objects within 3 object streams
+ 77 named destinations out of 1000 (max. 500000)
+ 232 words of extra memory for PDF output out of 10000 (max. 10000000)
 

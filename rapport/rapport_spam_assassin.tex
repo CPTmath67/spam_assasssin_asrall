@@ -86,7 +86,9 @@ Licence & Licence Apache 2.0 \\ \\
 SpamAsassin est donc aujourd'hui sous le giron de la Apache Software Foundation, organisation à but non lucratif qui
 s'occupe également du serveur Apache, Logiciel de distribution de contenu WEB le plus utilisés au monde. 
 Elle gère également 150 autres projets.
-EN outre tout ses projets sont distribués sous sa propre Licence, la licence Apache(actuellement en 2.0) , qui est compatible GPL v3.
+
+\paragraph{La licence apache}
+En outre tout ses projets sont distribués sous sa propre Licence, la licence Apache(actuellement en 2.0) , qui est compatible GPL v3.
 Cette licence met l’accent sur le copyright tout en restant bien sur une licence libre. Les objectifs principaux de la Fondation sont de protéger 
 juridiquement le travail des contributeurs et d'empêcher que la marque Apache soit utilisée illégalement.
 
@@ -97,11 +99,11 @@ pour s'adapter aux développements des méthodes qu'utilisent les spammeurs. C'e
 
 SpamAssasin contient environ 300 000 lignes de codes ce qui en fait un très gros projet( Graphique ~\ref{fig:code}).
 Le projet est à maturité et il ne grossit plus depuis plusieurs années, les développeurs se concentrant sur l'optimisation du code existant.
-Il y actuellement 23 développeurs pricnipaux, avec une répartition des lignes codes assez inégales, notamment deux développeurs qui ont fait la majorité du code( Tableau ~\ref{tab:devs}).
+Il y actuellement 23 développeurs principaux, avec une répartition des lignes codes assez inégales, notamment deux développeurs qui ont fait la majorité du code( Tableau ~\ref{tab:devs}).
 Mais vu que c'est un projet libre et open source, chacun est libre de contribuer et forker le projet. Cela concerne aussi 
-bien les particuliers que les entreprises (En respectant bien sur les restirction de la licence Apache).
+bien les particuliers que les entreprises (En respectant bien sur les restrictions de la licence Apache).
 
-\begin{figure}
+\begin{figure}[h!]
  \includegraphics[width=\textwidth]{annexes/lignes.png}
   \caption{Évolution du nombre de ligne de codes}
   \label {fig:code}
@@ -379,7 +381,8 @@ Filtrer les mail à l'entré est aussi possible.
 \section{Plugins non offciels}
 
 Par défaut SpamAssassin intègre plusieurs plugins (modules perl). Mais du fait que c'est un logiciel libre et que son code soit accessible plusieurs
-plugins non officiels ont vu le jour. Cela inclut également les plugins commerciaux(Plugins utilisant des licences non-libres). 
+plugins non officiels ont vu le jour. Cette avantage fait que les utilisateurs peuvent créer eux même leurs plugins,
+ajoutant ainsi des fonctionnalités à leurs propres solutions intégrant SpamAssassin. Cela inclut également les plugins commerciaux(Plugins utilisant des licences non-libres pour la majorité). 
 Parmi ces plugins on peut citer:
 
 \paragraph{Plugin gratuit}
@@ -398,74 +401,85 @@ Parmi ces plugins on peut citer:
  puis l'ajoute à la liste des URL extraites par SpamAssassin , pour que d'autres plugins puissent y avoir accès.
  \item [DNSWL spam reporting] Ajoute le service \emph{DNSWL} aux services qui reçoivent des signalements de SPAM
  grâce à la commande  "spamassassin --report" .
- \item [SAGrey]  Ce plugin est un outil de greylist, qui s'execute en deux phases.Son but est de permettre 
+ \item [SAGrey]  Ce plugin est un outil de greylist, qui s’exécute en deux phases.Son but est de permettre 
  de repérer les SPAM uniques. Il effectue deux donc deux vérifications:
  \begin{itemize}
   \item Il vérifie si le score SPAM du mail dépasse le seuil définie
   \item Si c'est le cas il va également vérifié si l’expéditeur est présent dans la liste banche automatique(AWL)
   Si le message dépasse le seuil et n'est pas dans la liste blanche, il va le considérer comme SPAM unique et augmenté le score du mail.
   Il peut également placer ses propres entes. Les avantages de ce module sont de réduire les mails à temporiser dans le cas de greylisting,
-  et de ne pas augmenter la taille des bases regroupant les expéditeurs connus.
+  et de ne pas augmenter la taille des bases regroupant les expéditeurs connus. Il est surtout utilisé 
+  avec de très grosses architectures mails.
  \end{itemize}
 
- \item [MTX] Une liste blanche de DNS distribuées.
+ \item [MTX] Une liste blanche de DNS distribuées. SpamAssasin peut accéder directement à liste.
  \end{description}
 \paragraph{Plugin commerciaux}
+SpamAssassin peut très facilement ajouter des modules pour augmenter son efficacité. Mais étant donné 
+que ce sont des programmes distincts ne faisant que s'interfacer avec SpamAssassin, cela
+autorise le développement de plugin propriétaires pour un usage commercial. Les plus connus sont les suivants:
 \begin{description}
- \item 
+ \item [Commtouch Plug-in] La société \emph{commtouch} fournit un plugin qui permet d'utiliser les propres technologies
+ et antispam de cette dernière. Les messages passe à travers le ``commtouch engine'' et le résultat est convertit en score SpamAssassin.
+ Ce plugin permet d'intégrer facilement les fonctionnalités des solutions de la société dans SpamAssassin, de réduire 
+ sa maintenance . Il permet egalement de doter facilement SpamAssasin d'un antivirus Zero-Hour(=Qui détecte les virus avant qu'ils ne soient actifs),
+ ainsi que renforcer la détection des SPAMs généré par des zombies ou botnet.
+ La licence est de type souscription annuelle.Ce plugin est non-libre. 
+ Plus d'information sur le \href{http://blog.cyren.com/articles/spamassassin-what-it-is-how-commtouchs-plug-works-with-it-1407.html}{blog} de la société.
+ \item[PhishPatrol] Ce plugin fournit par la société Wombat Security Technologies, Inc est dédié au phishing (hameçonnage en français \footnote{Détails sur \href{http://fr.wikipedia.org/wiki/Hame\%C3\%A7onnage}{wikipedia}}
+ mais permet aussi une détection du spear phhishing \footnote{Variante plus élaborée du phishing. Voir sur \href{http://fr.wikipedia.org/wiki/Spear_phishing}{wikipedia}}.
+ Il fonctionne avec des technologies et services propriétaires fournis par la société. Il vise une intégration homogène avec SpamAssassin.
+ Sa licence est non-libre, de type souscription annuelle.
+ \item[SNF4SA] Abréviation de ``Message Sniffer Antispam Plugin for SpamAssassin'', ce plugin combine un système collaboratif de réputation
+ d'IPs, des technologies d’algorithmes auto-apprenants distribués(distributed competitive machine learning technologies),
+ et un moteur d'analyse de contenu qui améliore la précision et la vitesse de SpamAssin, sans modifications additionnels.
+ Sa licence est non-libre, ce type souscription commercial.
 \end{description}
 
 
-\section{Comparatif avec des logiciels similaires à SpamAssassin}
-Naturellement, il existe d'autres logiciels qui ont la même fonctionnalité que SpamAssassin, avec leur propres avantages et inconvénients, en voici quelques uns : \\
-\\
-\textbf{Spampal}
-\begin{itemize}
-\item Avantages : Peut être couplé à SpamAssassin, fonctionne de manière transparente en tant que proxy POP ou IMAP, utilise beaucoup de blacklists piochées sur le net pour filtrer le spam.
-
-\item Inconvénients : SpamPal n'est pas totalement opérationnel au niveau du blocage par blacklist, et l'utilisation des blacklists DNS ralentissent et utilisent beaucoup de bande passante.
-\end{itemize}
-
-\textbf{K9}
-\begin{itemize}
-\item Avantages : Facile à mettre en place, léger.
-\item Inconvénients : Ne gère pas le protocole IMAP ni le cryptage SSL.
-\end{itemize}
-
-\textbf{POPFile}
-\begin{itemize}
-\item Avantages : Très efficace une fois mis en place
-\item Inconvénients : Compliqué à installer, ne gère pas les boites Hotmail
-\end{itemize}
-
-\textbf{Spamilihator}
-\begin{itemize}
-\item Avantages : Facile à installer, interface user-friendly
-\item Inconvénients : Doit apprendre de beaucoup de Spams reçus avant d'être efficace
-\end{itemize}
-
-\textbf{Bogofilter}
-\begin{itemize}
-\item Avantages : Analyse très rapide des mails, temps d'apprentissage des Spams beaucoup plus court, très bon complement à SpamAssassin.
-\item Inconvénients : Pas de réels inconvénients, Bogofilter reste le principal concurrent de SpamAssassin
-\end{itemize}
-
-\section{Quelques logiciels pouvant travailler avec SpamAssassin}
+\section{Solutions pouvant tirer parti des capacités de SpamAssassin}
 Les principaux logiciels avec lesquels SpamAssassin doit être couplé pour tirer profit du maximum de ses capacités sont évidemment les clients/serveurs de messagerie, comme par exemple :
-\begin{itemize}
-\paragraph{Au travers de MTA}
-\item Procmail
-\item qmail
-\item sendmail
-\item Exim
 
-\paragraph{Au travers de MUA}
-\item Thunderbird
-\item kmail
-\item Evolution
+\subsection{Au travers de MTA}
+\begin{description}
+\item [Procmail]
+\item [qmail]
+\item [sendmail]
+\item [Exim]
+\end{description}
+\subsection{Au travers de MUA}
+\begin{description}
+\item [Thunderbird]
+\item [kmail]
+\item [Evolution]
+\end{description}
+
+\subsection{SMTP}
+\subsection{Et plus encore}
+Mais SpamAssassin peut aussi se coupler a d'autres logiciels anti-spam pour obtenir un meilleur résultat de filtrage. On peux notamment l'associer à SpamPal, mais le logiciel anti-spam auquel il est le plus souvent couplé est Bogofilter car il reste le concurrent le plus performant sur ce plan. Bien configurés, l'alliance des deux logiciels permet un filtrage quasi-optimal.\\
+Il existe aussi des solutions qui travaillent en commun avec SpamAssassin afin d'améliorer la qualité de leur offre, quelques exemples :
+\begin{itemize}
+\item [amavisd-new] : Interface entre MTA, scanner de virus et SpamAssassin.
+\item [ClearOS] : Serveur Linux pour petites entreprises.
+\item [mxHero] : Solution de test de la sécurité du système de mail.
+\item [ClamAV] : Solution anti-virus qui peut-être associé a SpamAssassin pour une utilisation optimale.
 \end{itemize}
 
-Mais SpamAssassin peut aussi se coupler a d'autres logiciels anti-spam pour obtenir un meilleur résultat de filtrage. On peux notamment l'associer à SpamPal, mais le logiciel anti-spam auquel il est le plus souvent couplé est Bogofilter car il reste le concurrent le plus performant sur ce plan. Bien configurés, l'alliance des deux logiciels permet un filtrage quasi-optimal.
+\subsection{Solutions commerciales incluant SpamAssassin}
+L'efficacité de SpamAssassin est telle que le logiciel est souvent inclut dans des solutions complètes d'administration système. En voici quelques unes : 
+\begin{description}
+\item [Parallels Plesk] : Outil permettant de gérer des comptes utilisateurs, noms de domaines, comptes mails, qui inclut SpamAssassin dans sa solution commerciale.
+\item [AllEmail] : Proxy POP3 / POP3S utilisant SpamAssassin pour le filtrage anti-spam.
+\item [Blacknight] : Offre de passerelle pour les entreprises qui propose SpamAssassin dans leur services.
+\item [CleanMail Hosted Anti-Spam] : Solution anti-spam spécialisée Microsoft Exchange, Imail et Lotus.
+\item [Antispam.ie] : Solution de filtrage qui élimine le spam avant son entrée dans le réseau du destinataire.
+\item [ContentCatcher] : Solution de filtrage personnalisable à but professionnel.
+\item [CronLab Anti-Spam Hardware Appliances and Hosted Solution] : Solution complète de management de boite mail.
+\item [Heluna] : Solution low-cost pour PME de filtrage.
+\item [Spam Interceptor] : Solution anti-spam fonctionnant sur n'importe quel système possédant un navigateur.
+\end{description}
+
+SpamAssassin est présent dans bien d'autres solutions, ceci n'était qu'une légère énumération des nombreuses solutions incluant SpamAssassin.
+
 \end{document}
 
-\section{Logiciel intégrant SpamAssin}
