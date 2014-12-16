@@ -427,8 +427,13 @@ autorise le développement de plugin propriétaires pour un usage commercial. Le
  La licence est de type souscription annuelle.Ce plugin est non-libre. 
  Plus d'information sur le \href{http://blog.cyren.com/articles/spamassassin-what-it-is-how-commtouchs-plug-works-with-it-1407.html}{blog} de la société.
  \item[PhishPatrol] Ce plugin fournit par la société Wombat Security Technologies, Inc est dédié au phishing (hameçonnage en français \footnote{Détails sur \href{http://fr.wikipedia.org/wiki/Hame\%C3\%A7onnage}{wikipedia}}
- mais permet aussi une détection du spear phhishing \footnote{Variant plus poussé du phishing. Voir sur \href{http://fr.wikipedia.org/wiki/Spear_phishing}{wikipedia}}
- 
+ mais permet aussi une détection du spear phhishing \footnote{Variante plus élaborée du phishing. Voir sur \href{http://fr.wikipedia.org/wiki/Spear_phishing}{wikipedia}}.
+ Il fonctionne avec des technologies et services propriétaires fournis par la société. Il vise une intégration homogène avec SpamAssassin.
+ Sa licence est non-libre, de type souscription annuelle.
+ \item[SNF4SA] Abréviation de ``Message Sniffer Antispam Plugin for SpamAssassin'', ce plugin combine un système collaboratif de réputation
+ d'IPs, des technologies d’algorithmes auto-apprenants distribués(distributed competitive machine learning technologies),
+ et un moteur d'analyse de contenu qui améliore la précision et la vitesse de SpamAssin, sans modifications additionnels.
+ Sa licence est non-libre, ce type souscription commercial.
 \end{description}
 
 

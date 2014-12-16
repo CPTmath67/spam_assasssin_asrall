@@ -266,7 +266,7 @@ des score négatifs.
 \paragraph{Sa learn}\footnote{\href{https://spamassassin.apache.org/full/3.1.x/doc/sa-learn.html}{Documentation de sa learn}}
 Mais ce que permet surtout ce filtre c'est d'apprendre. En effet il va s'adapter aux utilisateurs. Les utilisateurs
 peuvent déclarer un courrier comme SPAM ou ''HAM'' et il sera alors pris en compte par le filtre bayésien de SpamAssasin.
-Le programme s'utilise de cette maniéré:
+Le programme s'utilise de cette manière:
 \begin{itemize}
  \item sa-learn --spam /Chemin/du dossier
  \item sa-learn --ham /Chemin/dudossier
@@ -291,8 +291,10 @@ La directive \emph{bayes\_expiry\_max\_db\_size} peut être ajoutée au fichier 
 \linebreak
 Sa-learn nous permet egalement un export de ces bases (avec l'option --backup du programme sa-learn, en redirigeant la sortie standard),. La restauration se fait 
 avec l'option --restore. 
-
-\pagebreak
+\paragraph*{Auto learning}
+Si on ne possède pas de messages stockés à faire apprendre à SpamAssassin , la fonctionnalité \emph{autolearning}
+va permettre d'apprendre automatiquement les SPAMs et non SPAMs. Elle est activé par défaut. La masse de mail 
+reçu déterminera quand les règles du filtre bayésiens s'activeront(Elle ne peuvent s'activer tant qu'un certains nombre de mails aient été traités par sa-learn).
 
 \section{Articulation du programme}
 
