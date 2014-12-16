@@ -7,7 +7,7 @@
 \usepackage{colortbl}
 \usepackage{hyperref}
 \usepackage{listings}
-
+\lstset{basicstyle=\footnotesize\ttfamily,breaklines=true}
 % Title Page
 \title{SPAM ASSASSIN}
 \date{Décembre 2014}
@@ -99,17 +99,18 @@ pour s'adapter aux développements des méthodes qu'utilisent les spammeurs. C'e
 
 SpamAssasin contient environ 300 000 lignes de codes ce qui en fait un très gros projet( Graphique ~\ref{fig:code}).
 Le projet est à maturité et il ne grossit plus depuis plusieurs années, les développeurs se concentrant sur l'optimisation du code existant.
+
 Il y actuellement 23 développeurs principaux, avec une répartition des lignes codes assez inégales, notamment deux développeurs qui ont fait la majorité du code( Tableau ~\ref{tab:devs}).
 Mais vu que c'est un projet libre et open source, chacun est libre de contribuer et forker le projet. Cela concerne aussi 
 bien les particuliers que les entreprises (En respectant bien sur les restrictions de la licence Apache).
 
-\begin{figure}[h!]
+\begin{figure}[h]
  \includegraphics[width=\textwidth]{annexes/lignes.png}
   \caption{Évolution du nombre de ligne de codes}
   \label {fig:code}
 \end{figure}
 
-\begin{table}
+\begin{table}[ht]!
  
 \definecolor{tcA}{rgb}{0.627451,0.627451,0.643137}
 \begin{center}
@@ -197,7 +198,7 @@ Il peut être utilisé de plusieurs manières:
 SpamAssassin reçoit des mails que lui redirigent d'autres programmes, y effectue des tests pour déterminer si ce sont des SPAMS, 
 puis renvoie les mails testés au programme qui les as envoyés.
 
-\subsection{Les test de SpamAssassin }
+\paragraph{Les test de SpamAssassin }
 
 \begin{description}
  \item [Champs d'entête] En se basant sur la forme des entêtes et en les comparant avec des schéma connus par SpamAssasin. En effet 
@@ -213,7 +214,7 @@ puis renvoie les mails testés au programme qui les as envoyés.
  en ne se basant pas juste sur un mot ou une phrase mais des ensembles. 
  \item [List noire/blanche automatique] SpamAssassin garde automatiquement une liste blanches des expéditeurs des mails.
  Pour chaque nouveau mail le programme compare le mail précédent provenant de la même adresse mail et adresse IP.
- Comme précédemment si une adresse email a envoyé un SPAM, ce nouveau mail verra son score abaissé. A l'inverse si c'était un bon mail son score 
+ Comme précédemment si une adresse email a envoyé un SPAM, ce nouveau mail verra son score augmenté. A l'inverse si c'était un bon mail son score 
  se verra baisser.
  \item [Liste noire/blanche manuelle] Il est tout à fait possible de définir ses propres listes, en autorisant ou 
  interdisant des mails de certaines adresses
@@ -243,14 +244,15 @@ ensuite de définir des actions à effectue. Quand un mail est considéré comme
  \item ''-Spam-Level: \*\*\*\*\*\*\*\*\* '': Renseigne le score (ici 9)
  \item -Spam-Status: Yes, score=9.0 required=5.0 tests=BAYES\_99,FROM\_EXCESS\_BASE64,FR\_HOWTOUNSUBSCRIBE,FR\_SPAMISLEGAL \dots : Indique des informations relatives aux test effectués et la configuration)
 \end{itemize}
-
 . L'utilisateur peut paramétrer ce score pour définir une marge de définitions des SPAMs(valeurs ''require``). Une fois ce score ateint le mail est considéré comme SPAM.
 C'est ensuite aux autres programmes d'utiliser ces données. Par exemple on pourrait configurer un MUA pour qu'il sépare 
 les SPAM par score suivant des filtres définit. 
 
 \label{baye}
-\section{Le filtre bayésien}
 
+\subsection{Apprentissage}
+
+\subsection{Le filtre bayésien}
 
 Une fonctionnalité qui est une des plus importantes caractéristiques de SpamAssassin est sans doute son filtre
 bayésien\footnote{\href {https://fr.wikipedia.org/wiki/Th\%C3\%A9or\%C3\%A8me\_de_Bayes}{Théorème de Bayes}}.
@@ -266,7 +268,7 @@ des score négatifs.
 \paragraph{Sa learn}\footnote{\href{https://spamassassin.apache.org/full/3.1.x/doc/sa-learn.html}{Documentation de sa learn}}
 Mais ce que permet surtout ce filtre c'est d'apprendre. En effet il va s'adapter aux utilisateurs. Les utilisateurs
 peuvent déclarer un courrier comme SPAM ou ''HAM'' et il sera alors pris en compte par le filtre bayésien de SpamAssasin.
-Le programme s'utilise de cette maniéré:
+Le programme s'utilise de cette manière:
 \begin{itemize}
  \item sa-learn --spam /Chemin/du dossier
  \item sa-learn --ham /Chemin/dudossier
@@ -291,33 +293,32 @@ La directive \emph{bayes\_expiry\_max\_db\_size} peut être ajoutée au fichier 
 \linebreak
 Sa-learn nous permet egalement un export de ces bases (avec l'option --backup du programme sa-learn, en redirigeant la sortie standard),. La restauration se fait 
 avec l'option --restore. 
+\paragraph*{Auto learning}
+Si on ne possède pas de messages stockés à faire apprendre à SpamAssassin , la fonctionnalité \emph{autolearning}
+va permettre d'apprendre automatiquement les SPAMs et non SPAMs. Elle est activé par défaut. La masse de mail 
+reçu déterminera quand les règles du filtre bayésiens s'activeront(Elle ne peuvent s'activer tant qu'un certains nombre de mails aient été traités par sa-learn).
 
-\pagebreak
+
 
 \section{Articulation du programme}
 
-\subsection{Configuration}
+\subsection{Configuration générale}
+
+
 
 La configuration de Spamassassin se fait principalement à travers le fichier \emph{local.cf}(exemple ~\ref{fig:local_sample}), qui se trouve dans le 
 répertoire '\emph{/etc/spamassassin}.
 Les utilisateurs UNIX peuvent également avoir leurs propres configurations grâce au fichier \emph{user\_prefs}
 qui se trouve dans le répertoire \emph{.spamassassin} de leurs home respectifs. 
 Par défaut, un certain nombre d’options sont prédéfinies. 
+\linebreak
+SpamAssassin tient ses avantages en terme de modularité et de sa facilité d'intégration avec d'autres programme de son langage, PERL.
+C'est un module PERL qui permet d'être utiliser plus facilement à travers une distributions PERL. 
 
-\begin{figure}[h]
- \centering
- \includegraphics[width=\textwidth]{./annexes/local_sample.png}
- % local_sample.png: 0x0 pixel, 300dpi, 0.00x0.00 cm, bb=
- \caption{Exemple de configuration basique de SpamAssassin}
- \label{fig:local_sample}
-\end{figure}
-
-
-\subsubsection{Options de configuration}
-
-Spam assassin possèdent plusieurs options dont certaine non activés par défaut. Il suffit de les ajouter aux fichiers 
-de configuration.
-Les options les plus importantes sont les suivantes:
+\subsubsection{Options les plus utilisés}
+\paragraph{Désactiver les configurations des utilisateurs}
+Dans certains cas on peut désactiver les fichiers de préférences des utilisateurs. Si les utilisateurs n'ont pas accès à leurs configurations 
+(pour éviter de lire inutilement les fichiers) ou si SpamAssassin n'est pas appelé par les utilisateurs(dans le cas d'un filtrage générale).
 
 \begin{description}
  \item [Désactiver les préférences utilisateurs]Dans \emph{/etc/default/spamassassin}, il faut changer la ligne d'options pour désactiver les préférences par utilisateur (qui serait normalement stockées dans leur home directory) et utiliser les préférences globales à la place. 
@@ -326,16 +327,188 @@ Les options les plus importantes sont les suivantes:
                            \item [score SYMBOLIC\_TEST\_NAME n.nn [ n.nn n.nn n.nn ]] Assigne les scores( voir ~\ref{score}) à un test donné.
                           \end{description}
 \item 
-
 \end{description}
-\label{baye_conf}
-
-
+\begin{figure}[h!t!]
+ \centering
+ \includegraphics[width=\textwidth]{./annexes/local_sample.png}
+ % local_sample.png: 0x0 pixel, 300dpi, 0.00x0.00 cm, bb=
+ \caption{Exemple de configuration basique de SpamAssassin}
+ \label{fig:local_sample}
+\end{figure}
+\pagebreak
 \subsection{Les règles}
+\paragraph{Explications des règles de filtrage de SpamAssassin}
+\textbf{SpamAssassin} est basé sur un système de filtrage par règles appliqués lors de tests. 
+Ces règles peuvent se mettre dans le fichier de configuration principal (/etc/spamassassin:local.cf) pour 
+une configuration globale.
+Ce sont ces règles qui vont être vérifiés à chaque message transmis à SpamAssassin, et être utilisés pour les test.
 
-Il est possibles de définir des règles personnalisés. 
 
-\section{ Utilisation }
+Certaines sont configurés par défaut et permettent de
+bien repérer les SPAMs dans la majorité des cas. Cependant pour permettre aux utilisateurs de répondre à des besoins spécifiques,
+il est possible d'en déterminer sois même.
+\linebreak
+Avant d'expliquer les règles en détails, voici un exemple de configuration de règles destinés à la langue Française:
+\begin{tiny}
+\lstset{numbers=left}
+\begin{lstlisting}[language=perl,frame=L,breaklines=true]
+#####################################################################################
+##### FRENCH SPECIFIC SPAMASSASSIN RULES. 
+##### USE AND REDISTRIBUTE WITH THIS NOTE AT YOUR OWN RISK AND PLEASURE.
+##### AUTHOR: John GALLET
+##### Version: 2008-JUNE-21
+##### Latest: http://www.saphirtech.fr/
+##### Status: It Works For Me (tm)
+#####################################################################################
+# Spam is legal in France !
+body FR_SPAMISLEGAL                     /\b(Conform.+ment|En vertu).{0,5}(article.{0,4}34.{0,4})?la loi\b/i
+describe FR_SPAMISLEGAL                 French: pretends spam is (l)awful.
+lang fr describe FR_SPAMISLEGAL		Invoque la loi informatique et libertes.
+score FR_SPAMISLEGAL                    2.5
+
+body FR_SPAMISLEGAL_2                   /\bdroit d.acc.+s.{1,3}(de modification)?.{0,5}de rectification\b/i
+describe FR_SPAMISLEGAL_2               French: pretends spam is (l)awful.
+lang fr describe FR_SPAMISLEGAL_2	Invoque le droit de rectification cnil.
+score FR_SPAMISLEGAL_2                  2.5
+
+#####
+# yeah, sure.
+body FR_NOTSPAM                         /\b(ceci|ce).{1,9} n.est pas.{1,5}spam\b/i
+describe FR_NOTSPAM                     French: claims not to be spam.
+lang fr describe FR_NOTSPAM		Affirme ne pas etre du spam.
+score FR_NOTSPAM                        4.0
+
+header FR_MAILER_1                      X-Mailer =~ /(delosmail|cabestan|ems|mp6|wamailer|
+phpmailer|eMailink|Accucast|Benchmail)/i
+describe FR_MAILER_1                    French spammy X-Mailer
+lang fr describe FR_MAILER_1		X-Mailer couramment employe pour des spams en francais.
+score FR_MAILER_1                       4.0
+
+header FR_MAILER_2                      X-EMV-CampagneId =~ /.+/
+describe FR_MAILER_2                    French spammy mailer header
+lang fr describe FR_MAILER_2		X-Mailer couramment employe pour des spams en francais.
+score FR_MAILER_2                       4.0
+
+#####################################################################################
+##### END FRENCH SPECIFIC SPAMASSASSIN RULES.
+#####################################################################################
+
+\end{lstlisting}
+\end{tiny}
+Dans ce fichier de configuration, on peux voir que l'on peut influer le score selon certains mots présent dans le mail inspecté, comme dans la première règle par exemple, ou les mots "Conformément" ou "En vertu" rapportent 0.5 points au mail. Le mot "article" en rapporte 0.4, et si il y a quelque chose derrière la chaîne de caractère "34.", cela rapporte 0.4 points aussi. Ce qui fait un total de 1.3 points, On peux voir que le score du mail est de 2.5, si le mail est un spam, il n'a qu'une marge de 1.2 points avant d'être considéré comme tel.
+On peux ajouter un nom à notre règle avec l'option describe.
+On peux ajouter la langue utilisée pour cette règle.
+Pour finir on définit le score.
+
+On peux définir des mots ou des lettres précises en utilisant les expressions régulières de Perl :
+
+Par exemple, avec cette expression régulière, le mail sera filtré si il contient "agra", comme dans "viagra", même si ce mot est "agrafe" ( Le /i ignore la casse) :
+\begin{lstlisting}
+body LOCAL_DEM_VIAGRA /agra/i  
+\end{lstlisting}
+
+On peux modifier l'écriture de l'entête du mail afin de spécifier que ce mail est un spam :
+\begin{lstlisting}
+rewrite_header Subject ****SPAM STOP*****
+\end{lstlisting}
+
+On utilise le filtre bayésien en incluant cette option : 
+\begin{lstlisting}
+use_bayes 1
+\end{lstlisting}
+
+On indique à SpamAssassin qu'il doit effectuer l'apprentissage automatique des spams :
+
+\begin{lstlisting}
+auto_learn 1
+\end{lstlisting}
+
+On spécifie que l'on veut recevoir des mails qu'en français avec cette option :
+
+\begin{lstlisting}
+ok_languages fr <----- Je n'accepte que les mail en Français
+\end{lstlisting}
+
+\paragraph{Les tests}
+
+En règle générale un test se décompose de la manière suivante:
+\begin{itemize}
+ \item Un nom, consistant jusqu'à 22 lettre majuscule, nombre ou underscores.
+ \item Une description plus complète, qui est utilisé dans les rapports générés par SpamAssassin, 
+ faisant en règle générale une cinquantaine de caractères
+ \item Ou effectuer le test dans le message. Le test peut être effectué uniquement dans l'entête du message, 
+ dans le corps du message uniquement, les identifiants de ressources unifiés 
+ (URN, détails sur Wikipedia\footnote{\href{http://fr.wikipedia.org/wiki/Uniform_Resource_Identifier}{URN}}).
+ \item Une description de ce que les test cherche à capturer. Un test peut spécifier:
+    \begin{itemize}
+     \item Vérifier l'existence d'un entête
+     \item Un expression régulière utilisant la syntaxe en PERl (puisque SpamAssasin est écrit en PERL)
+     \item Une liste noire de DNS ou envoyer une requête
+     \item Une fonction de SpamAssassin à appeler
+     \item Des ``Test flags'' qui permettent de déterminer sous quelles conditions le test doit être appliqué, 
+     ou d'autres choses exceptionnels.
+     \item Un ou plusieurs scores pour le test. Les tests peuvent avoir un unique score qui est utilisé systématiquement
+     , ou avoir des scores différents suivants les 4 conditions suivantes:
+	\begin{itemize}\label{cond}
+	 \item Quand le filtre Bayésien et les tests réseaux ne sont pas utilisés 
+	 \item Quand les tests réseaux sont utilisés mais pas le filtre Bayésien
+	\item Quand le filtre Bayésien est utilisé mais pas les test réseaux 
+	\item Quand le filtre Bayésien et les tests réseaux  sont utilisés
+	\end{itemize}
+    \end{itemize}
+\end{itemize}
+
+\paragraph{Exemple}
+\begin{lstlisting}[frame=single]
+header FROM_STARTS_WITH_NUMS    From =~ /^\d\d/
+describe FROM_STARTS_WITH_NUMS  From: starts with nums
+
+score FROM_STARTS_WITH_NUMS     0.390 1.574 1.044 0.579
+\end{lstlisting}
+
+La directive \emph{header} spécifie que le test portera sur l'entête du message, 
+\emph{FROM\_STARTS\_WITH\_NUMS} spécifie le nom du test puis suivis du test à effectuer (ici une expression régulière).
+La directive \emph{describe} fournit une description lisible humainement.
+La directive \emph{score} va déterminer le score à appliquer au mail si le test s'avère positif. Dans ce cas ci
+le score va correspondre aux 4 conditions définit juste au dessus ( Voir au dessus \ref{cond} ). Si cette directive n'est definit qu'avec
+un score, il sera appliqué quelque sois la condition.
+
+\paragraph{Les test par défaut}
+SpamAssasin est fournis par défaut avec certains tests. Ces tests sont regroupés par type dans des fichiers contenant les règles (ruleset), le score de chaque test 
+étant regroupé dans un seul fichier. Ils sont stockées par défaut dans \emph{/usr/share/spamassassin}.
+
+\subsection{Fonctionnement de Liste blanche automatique(AWL)}
+
+Quand cette option est activée, SpamAssassin va garder automatiquement une base de données contenant les IPs des expéditeurs des courriers reçus ainsi 
+que leurs adresses IPS (ou l'adresses IP du relais ayant transmis le mail). Chaque fois qu'un message est reçu, le score SPAM du message 
+est ajouté au score total de l'expéditeur stocké dans la base de donnée, et le nombre de messages reçu de la part de
+cet utilisateur est incrémenté. 
+
+Cette fonctionnalité sert surtout à éviter les faux positifs(Un expéditeur régulier ne va pas se mettre subitement à envoyer un SPAM)
+
+Le score moyen d'un expéditeur(score total divisé par le nombre de messages) est utilisé pour modifier  
+le score SPAM des nouveaux messages reçu de la part de cet expéditeur. Plus précisément, la différence entre le score 
+moyen de l’expéditeur et celui du nouveau message est multiplié par un facteur qui est paramétrable,
+et le résultat est ajouté au score du nouveau message. Dans ce cas, quand un nouveau message à son SPAM score 
+au dessous de la moyenne, son score SPAM est augmenté, et inversement quand le score SPAM est supérieur à la moyenne
+son SPAM score est diminué.
+
+Les test de la liste blanche automatiques sont les derniers exécutés par SpamAssassin, puisqu'il est nécessaire de disposer du score du message.
+Egalement, le score moyen de l'expéditeur est mis a jour avant le test avec le SPAM score du message, 
+avant que ce score ne soit modifié par la suite.
+
+\subsubsection{Paramétrage de l'AWL}
+Le choix important à faire est est de déterminer quel poids l'on va donner à l'historique de l'expéditeur et son score moyen, et celui du SPAM score des messages.
+La règle \emph{auto\_whitelist\_factor} va nous permettra de définir le coefficient(un réel) à appliquer. La valeur de ce coefficient 
+varie de 0 à 1. Il est par défaut de 0.5, ce qui va mettre le score final appliqué au message entre le score moyen 
+de l'expéditeur et celui du message. 
+
+Pour donner plus d'importance au score moyen de l'expéditeur on va augmenter ce coefficient. Quand ce coefficient 
+est mis à 1, le score moyen de l'expéditeur va devenir celui du message.
+
+
+
+\section{Utilisation }
 
 
 SpamAssassin peut être utilisé avec des Mail Transfert Agent comme Postfix. On peut par exemple contrôler les messages
@@ -368,7 +541,6 @@ VERBOSE=ON
 On peut tout à fait remplacer \emph{spamc} par \emph{spamassassin}. La seul différence étant au niveau des performances, 
 chaque appel à la commande \emph{spamassassin}créant un processus distinct, alors que \emph{spamc} fait appel au demon \emph{spamd}.
 A partir de là tout va passer à travers SpamAssassin.
-
 \pagebreak
 
 \subsection{SMTP}
@@ -377,6 +549,15 @@ Filtrer les mail à l'entré est aussi possible.
         
 
 \part{Autour de SpamAssasin}
+
+\section{Interfaces graphiques}
+
+Certains solutions graphiques (pour la plupart web) ont intégré SpamAssassin, pour en permettre une administration plus intuitive.
+On peut citer notamment:
+\begin{description}
+ \item 
+\end{description}
+
 
 \section{Plugins non offciels}
 
