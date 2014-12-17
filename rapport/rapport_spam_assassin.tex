@@ -308,8 +308,6 @@ reçu déterminera quand les règles du filtre bayésiens s'activeront(Elle ne p
 
 \subsection{Configuration générale}
 
-
-
 La configuration de Spamassassin se fait principalement à travers le fichier \emph{local.cf}(exemple ~\ref{fig:local_sample}), qui se trouve dans le 
 répertoire '\emph{/etc/spamassassin}.
 Les utilisateurs UNIX peuvent également avoir leurs propres configurations grâce au fichier \emph{user\_prefs}
@@ -583,10 +581,21 @@ Filtrer les mail à l'entré est aussi possible.
 
 \part{Autour de SpamAssasin}
 
-\section{Interfaces graphiques}
+\section{Interfaces web}
+Pour faciliter la gestion et configuration de Spamassassin il existe plusieurs interfaces dédiées ou pouvant intégrer 
+SpmaAssassin. Cette liste non exhaustive comprend notamment:
 
-Certains solutions graphiques (pour la plupart web) ont intégré SpamAssassin, pour en permettre une administration plus intuitive.
-On peut citer notamment:
+\begin{description}
+ \item [Webuserprefs] Ecrite en PHP cette interface supporte 
+ \item [vMail.Admin] Interface écrite en PHP et PERL. Tout le stockage est fait en SQL. Cette interface permet 
+ de combiner la gestion par domaine par un administrateur mais egalement par utilisateur.
+ \item [Webmin] Une interface d'administration de serveur, inclus un support complet de SpamAssassin(au début seulement avec un plugin).
+ Peut aussi prendre en charge les règles de délivrances de procmail. 
+ \item [php-sa-mysql] Spécifiquement créé pour SpamAssassin. 
+ 
+\end{description}
+
+
 \begin{description}
  \item 
 \end{description}
@@ -656,7 +665,7 @@ Les principaux logiciels avec lesquels SpamAssassin doit être couplé pour tire
 
 \subsection{Au travers de MTA}
 \begin{description}
-\item [Procmail]
+\item [postfix]
 \item [qmail]
 \item [sendmail]
 \item [Exim]
@@ -668,7 +677,6 @@ Les principaux logiciels avec lesquels SpamAssassin doit être couplé pour tire
 \item [Evolution]
 \end{description}
 
-\subsection{SMTP}
 \subsection{Et plus encore}
 Mais SpamAssassin peut aussi se coupler a d'autres logiciels anti-spam pour obtenir un meilleur résultat de filtrage. On peux notamment l'associer à SpamPal, mais le logiciel anti-spam auquel il est le plus souvent couplé est Bogofilter car il reste le concurrent le plus performant sur ce plan. Bien configurés, l'alliance des deux logiciels permet un filtrage quasi-optimal.\\
 Il existe aussi des solutions qui travaillent en commun avec SpamAssassin afin d'améliorer la qualité de leur offre, quelques exemples :
@@ -692,10 +700,11 @@ L'efficacité de SpamAssassin est telle que le logiciel est souvent inclut dans 
 \item [Heluna] : Solution low-cost pour PME de filtrage.
 \item [Spam Interceptor] : Solution anti-spam fonctionnant sur n'importe quel système possédant un navigateur.
 \item [Cyren Email Security]: Solution intégrant plusieurs outils anti-spam et anti virus. Egalement éditrice 
+
 d'un plugin SpamAssassin (Voir plus haut \ref{cyren})
 \end{description}
 
-SpamAssassin est présent dans bien d'autres solutions, ceci n'était qu'une légère énumération des nombreuses solutions incluant SpamAssassin.
+SpamAssassin est présent dans bien d'autres solutions, ceci n'était qu'une légère énumération non exhaustive des solutions les plus connues pouvant l'utiliser.
 
 \end{document}
 

@@ -77,18 +77,21 @@ Langage & Perl
 Dernière version & 3.4.0 (11 février 2014) [+/-] \\
 Environnements & Multiplate-forme  \\
 Type & Anti-spam & \\
-Licence & Licence Apache 2.0 \\ \\
+Licence & Licence Apache 2.0 \\ 
+Année de création & 2001 \\
 \hline
 \end{tabular}
 \end{center}
 
+SpamAssassin a été la première fois introduit sur le site dédié aux logiciels open-source \emph{Sourceforge}
+par Justin Mason en avril 2001.
 
-
-SpamAsassin est donc aujourd'hui sous le giron de la Apache Software Foundation, organisation à but non lucratif qui
+\paragraph{La licence apache}
+SpamAsassin est aujourd'hui sous le giron de la Apache Software Foundation, organisation à but non lucratif qui
 s'occupe également du serveur Apache, Logiciel de distribution de contenu WEB le plus utilisés au monde. 
 Elle gère également 150 autres projets.
 
-\paragraph{La licence apache}
+
 En outre tout ses projets sont distribués sous sa propre Licence, la licence Apache(actuellement en 2.0) , qui est compatible GPL v3.
 Cette licence met l’accent sur le copyright tout en restant bien sur une licence libre. Les objectifs principaux de la Fondation sont de protéger 
 juridiquement le travail des contributeurs et d'empêcher que la marque Apache soit utilisée illégalement.
@@ -98,8 +101,8 @@ pour s'adapter aux développements des méthodes qu'utilisent les spammeurs. C'e
 
 \subsection{Développement}
 
-SpamAssasin contient environ 300 000 lignes de codes ce qui en fait un très gros projet( Graphique ~\ref{fig:code}).
-Le projet est à maturité et il ne grossit plus depuis plusieurs années, les développeurs se concentrant sur l'optimisation du code existant.
+SpamAssasin contient environ 300 000 lignes de codes à l'heure actuelle ce qui en fait un projet important( Graphique ~\ref{fig:code}).
+Néanmoins le projet semble être à maturité et sa masse de codes ne grossit plus depuis plusieurs années, les développeurs se concentrant sur l'optimisation du code existant.
 
 Il y actuellement 23 développeurs principaux, avec une répartition des lignes codes assez inégales, notamment deux développeurs qui ont fait la majorité du code( Tableau ~\ref{tab:devs}).
 Mais vu que c'est un projet libre et open source, chacun est libre de contribuer et forker le projet. Cela concerne aussi 
@@ -251,7 +254,7 @@ les SPAM par score suivant des filtres définit.
 
 \label{baye}
 
-\subsection{Apprentissage}
+\section{Apprentissage}
 
 \subsection{Le filtre bayésien}
 
@@ -304,8 +307,6 @@ reçu déterminera quand les règles du filtre bayésiens s'activeront(Elle ne p
 \section{Articulation du programme}
 
 \subsection{Configuration générale}
-
-
 
 La configuration de Spamassassin se fait principalement à travers le fichier \emph{local.cf}(exemple ~\ref{fig:local_sample}), qui se trouve dans le 
 répertoire '\emph{/etc/spamassassin}.
@@ -514,7 +515,11 @@ de l'expéditeur et celui du message.
 Pour donner plus d'importance au score moyen de l'expéditeur on va augmenter ce coefficient. Quand ce coefficient 
 est mis à 1, le score moyen de l'expéditeur va devenir celui du message. Pour diminuer l'importance du score moyen de l'expéditeur 
 on va abaisser le coefficient.Quand le coefficient est définit à 0 le score du SPAM restera inchangé. 
+\linebreak[2]
 
+
+Le tableau suivant nous permet de voir les effets qu'exerce le coefficient sur le score d'un message,
+avec un coefficient de 0, 0.5, 0.75, et 1.
 
 {%
 \newcommand{\mc}[3]{\multicolumn{#1}{#2}{#3}}
@@ -533,7 +538,7 @@ Message & Score avant AWL& Score moyen de l'expediteur & \mc{4}{l}{Score  après
 }%
 
 
-
+\pagebreak
 \section{Utilisation }
 
 
@@ -576,10 +581,18 @@ Filtrer les mail à l'entré est aussi possible.
 
 \part{Autour de SpamAssasin}
 
-\section{Interfaces graphiques}
+\section{Interfaces web}
+Pour faciliter la gestion et configuration de Spamassassin il existe plusieurs interfaces dédiées ou pouvant intégrer 
+SpmaAssassin. Cette liste non exhaustive comprend notamment:
 
-Certains solutions graphiques (pour la plupart web) ont intégré SpamAssassin, pour en permettre une administration plus intuitive.
-On peut citer notamment:
+\begin{description}
+ \item [Webuserprefs] Ecrite en PHP cette interface supporte 
+ \item [vMail.Admin] Interface écrite en PHP et PERL. Tout le stockage est fait en SQL. Cette interface permet 
+ de combiner la gestion par domaine par un administrateur mais egalement par utilisateur.
+ \item [Webmin] 
+\end{description}
+
+
 \begin{description}
  \item 
 \end{description}
@@ -626,7 +639,7 @@ SpamAssassin peut très facilement ajouter des modules pour augmenter son effica
 que ce sont des programmes distincts ne faisant que s'interfacer avec SpamAssassin, cela
 autorise le développement de plugin propriétaires pour un usage commercial. Les plus connus sont les suivants:
 \begin{description}
- \item [Commtouch Plug-in] La société \emph{commtouch} fournit un plugin qui permet d'utiliser les propres technologies
+ \item [Commtouch Plug-in \label{cyren}] La société \emph{commtouch} fournit un plugin qui permet d'utiliser les propres technologies
  et antispam de cette dernière. Les messages passe à travers le ``commtouch engine'' et le résultat est convertit en score SpamAssassin.
  Ce plugin permet d'intégrer facilement les fonctionnalités des solutions de la société dans SpamAssassin, de réduire 
  sa maintenance . Il permet egalement de doter facilement SpamAssasin d'un antivirus Zero-Hour(=Qui détecte les virus avant qu'ils ne soient actifs),
@@ -649,7 +662,7 @@ Les principaux logiciels avec lesquels SpamAssassin doit être couplé pour tire
 
 \subsection{Au travers de MTA}
 \begin{description}
-\item [Procmail]
+\item [postfix]
 \item [qmail]
 \item [sendmail]
 \item [Exim]
@@ -661,7 +674,6 @@ Les principaux logiciels avec lesquels SpamAssassin doit être couplé pour tire
 \item [Evolution]
 \end{description}
 
-\subsection{SMTP}
 \subsection{Et plus encore}
 Mais SpamAssassin peut aussi se coupler a d'autres logiciels anti-spam pour obtenir un meilleur résultat de filtrage. On peux notamment l'associer à SpamPal, mais le logiciel anti-spam auquel il est le plus souvent couplé est Bogofilter car il reste le concurrent le plus performant sur ce plan. Bien configurés, l'alliance des deux logiciels permet un filtrage quasi-optimal.\\
 Il existe aussi des solutions qui travaillent en commun avec SpamAssassin afin d'améliorer la qualité de leur offre, quelques exemples :
@@ -684,9 +696,12 @@ L'efficacité de SpamAssassin est telle que le logiciel est souvent inclut dans 
 \item [CronLab Anti-Spam Hardware Appliances and Hosted Solution] : Solution complète de management de boite mail.
 \item [Heluna] : Solution low-cost pour PME de filtrage.
 \item [Spam Interceptor] : Solution anti-spam fonctionnant sur n'importe quel système possédant un navigateur.
+\item [Cyren Email Security]: Solution intégrant plusieurs outils anti-spam et anti virus. Egalement éditrice 
+
+d'un plugin SpamAssassin (Voir plus haut \ref{cyren})
 \end{description}
 
-SpamAssassin est présent dans bien d'autres solutions, ceci n'était qu'une légère énumération des nombreuses solutions incluant SpamAssassin.
+SpamAssassin est présent dans bien d'autres solutions, ceci n'était qu'une légère énumération non exhaustive des solutions les plus connues pouvant l'utiliser.
 
 \end{document}
 
