@@ -243,19 +243,22 @@ Ce résultat sera ensuite utilisé par d'autres programmes pour déterminer des 
 
 \section{Le score} \label{score}
 C'est la base du signalement des SPAM de SpamAsassin. Un mail après avoir subi des test différents se voit attribuer une note. Cette note permet
-ensuite de définir des actions à effectue. Quand un mail est considéré comme SPAM, SpamAssassin ajoute ses propres entêtes (Exemple ~\ref{fig:ex_score}):
+ensuite de définir des actions à effectue. Quand un mail est considéré comme SPAM, SpamAssassin ajoute ses propres entêtes (Exemple en dessous):
 \begin{itemize}
  \item ''-Spam-Level: \*\*\*\*\*\*\*\*\* '': Renseigne le score (ici 9)
- \item -Spam-Status: Yes, score=9.0 required=5.0 tests=BAYES\_99,FROM\_EXCESS\_BASE64,FR\_HOWTOUNSUBSCRIBE,FR\_SPAMISLEGAL \dots : Indique des informations relatives aux test effectués et la configuration)
+ \item -Spam-Status: Yes, score=9.0 required=5.0 tests=\\BAYES\_99,FROM\_EXCESS\_BASE64,FR\_HOWTOUNSUBSCRIBE,FR\_SPAMISLEGAL \dots \\
+ : Indique des informations relatives aux test effectués et la configuration)
 \end{itemize}
 . L'utilisateur peut paramétrer ce score pour définir une marge de définitions des SPAMs(valeurs ''require``). Une fois ce score ateint le mail est considéré comme SPAM.
 C'est ensuite aux autres programmes d'utiliser ces données. Par exemple on pourrait configurer un MUA pour qu'il sépare 
 les SPAM par score suivant des filtres définit. 
 
-\label{baye}
+ \includegraphics[width=\textwidth]{annexes/entete.png}
+
+
 
 \section{Apprentissage}
-
+\label{baye}
 \subsection{Le filtre bayésien}
 
 Une fonctionnalité qui est une des plus importantes caractéristiques de SpamAssassin est sans doute son filtre
@@ -305,19 +308,58 @@ reçu déterminera quand les règles du filtre bayésiens s'activeront(Elle ne p
 
 
 \section{Articulation du programme}
+\subsection{installation}
+\paragraph{distributions}
+Les plus grandes distributions possède spamassassin dans Leurs dépôts. Par exemple pour debian il suffit de taper:
+\begin{lstlisting}
+ $aptitude install spmasssassin 
+\end{lstlisting}
+cela à l'avantage de gérer les dépendances automatiquement.
 
+\paragraph{Manuellement}
+Si besoin SpamAssassin s'installe facilement Manuellement. Il suffit pour ce faire de récupérer l'archive du programme sur le site du projet ( \href{http://spamassassin.apache.org/}).
+Ensuite on l'extrait dans un repertoire de son choix:
+\begin{lstlisting}
+ $tar xvfz Mail-SpamAssassin-3.3.2.tar.gz
+\end{lstlisting}
+Il faut se rendre dans le repertoire \emph{ Mail-SpamAssassin-3.3.2} qui vient de se créer. On peut lire le fichier \emph{INSTALL}
+qui décrit les manières d'installer SpamAssassin. Avec une installation manuel on lance d'abord:
+\begin{lstlisting}
+ $perl Makefile.PL PREFIX=/usr/local
+\end{lstlisting}
+ Puis on tape make lorsque les dépendances ont toutes été satisfaites
+\begin{lstlisting}
+  $make            
+\end{lstlisting}
+
+Puis en tant que superutilisateur en lance la commande 
+\begin{lstlisting}
+ #make install
+\end{lstlisting}
+ qui va installer les différents éléments de SpamAssassin aux bon endroits.
 \subsection{Configuration générale}
 
 La configuration de Spamassassin se fait principalement à travers le fichier \emph{local.cf}(exemple ~\ref{fig:local_sample}), qui se trouve dans le 
-répertoire '\emph{/etc/spamassassin}.
+répertoire '\emph{/etc/spamassassin}. Mais c'est en premier les fichiers se terminant par \emph{.pre} qui sont lu. \emph{init.pre} contient la liste des plugins à activer.
+Les autres fichiers .pre inclus sont spécifiques aux plugins ajoutés à chaque nouvelle versions.
+
 Les utilisateurs UNIX peuvent également avoir leurs propres configurations grâce au fichier \emph{user\_prefs}
 qui se trouve dans le répertoire \emph{.spamassassin} de leurs home respectifs. 
 Par défaut, un certain nombre d’options sont prédéfinies. 
 \linebreak
 SpamAssassin tient ses avantages en terme de modularité et de sa facilité d'intégration avec d'autres programme de son langage, PERL.
-C'est un module PERL qui permet d'être utiliser plus facilement à travers une distributions PERL. 
+SpamAssassin est en effet un module PERL qui permet d'être utiliser plus facilement à travers une distributions PERL. 
 
-\subsubsection{Options les plus utilisés}
+\begin{figure}[h!]
+ \centering
+ \includegraphics[width=\textwidth]{./annexes/local_sample.png}
+ % local_sample.png: 0x0 pixel, 300dpi, 0.00x0.00 cm, bb=
+ \caption{La configuration se présente sous forme de directives}
+ \label{fig:local_sample}
+\end{figure}
+\pagebreak
+\subsubsection{Options de configurations}
+Quelques une des options qui s'avèrent utiles.
 \paragraph{Désactiver les configurations des utilisateurs}
 Dans certains cas on peut désactiver les fichiers de préférences des utilisateurs. Si les utilisateurs n'ont pas accès à leurs configurations 
 (pour éviter de lire inutilement les fichiers) ou si SpamAssassin n'est pas appelé par les utilisateurs(dans le cas d'un filtrage générale).
@@ -328,16 +370,8 @@ Dans certains cas on peut désactiver les fichiers de préférences des utilisat
                            \item [required\_score n.nn (default:5)] Définit le score par défaut considérant un message comme SPAM. la valeur peut être un réel ou un entier
                            \item [score SYMBOLIC\_TEST\_NAME n.nn [ n.nn n.nn n.nn ]] Assigne les scores( voir ~\ref{score}) à un test donné.
                           \end{description}
-\item 
+
 \end{description}
-\begin{figure}[h!t!]
- \centering
- \includegraphics[width=\textwidth]{./annexes/local_sample.png}
- % local_sample.png: 0x0 pixel, 300dpi, 0.00x0.00 cm, bb=
- \caption{Exemple de configuration basique de SpamAssassin}
- \label{fig:local_sample}
-\end{figure}
-\pagebreak
 \subsection{Les règles}
 \paragraph{Explications des règles de filtrage de SpamAssassin}
 \textbf{SpamAssassin} est basé sur un système de filtrage par règles appliqués lors de tests. 
@@ -547,7 +581,7 @@ avec SpamAssassin juste après leurs réception par le demon SMTPD. Mais la faç
 de filtrer statiquement les mails et de les déposer dans leurs boites mails respectives. 
 
 \subsection{MDA}
-
+\paragraph{exemple avec procmail}
 Souvent couplé avec \emph{Postfix} (Le serveur de messagerie le plus utilisé dans le monde), procmail est le 
 Mail Delivery Agent(Egalement connu comme Local Delivery Agent, sont des programmes qui sont responsable
 de la délivrance des mails dans les boites des utilisateurs) que l'on trouve par défaut sur beaucoup de systèmes UNIX.
@@ -576,9 +610,28 @@ A partir de là tout va passer à travers SpamAssassin.
 
 \subsection{SMTP}
 
-Filtrer les mail à l'entré est aussi possible. 
+Filtrer les mail à l'entré est aussi possible. Tous les mails reçu
+par le MTA passeront à travers SpamAssasin.
         
+\paragraph{Exemple avec postfix} Pour filtrer les mails entrant avec postfix,
+dans '/etc/postfix/master.cf' à la fin de la ligne smtp, on ajoute '-o spamassassin'. 
+\begin{lstlisting}
+ # Postfix master process configuration file.  For details on the format
+# of the file, see the master(5) manual page (command: "man 5 master").
+#
+# ==========================================================================
+# service type  private unpriv  chroot  wakeup  maxproc command + args
+#               (yes)   (yes)   (yes)   (never) (100)
+# ==========================================================================
+smtp      inet  n       -       -       -       -       smtpd -o content_filter=spamassassin
+\end{lstlisting}
+Ensuite , à la fin du fichier Master.cf il faut créer un service spamassassin
+\begin{lstlisting}
+ spamassassin unix -     n       n       -       -       pipe user=nobody argv=/usr/bin/spamc -f -e /usr/sbin/sendmail -oi -f ${sender} ${recipient}
+\end{lstlisting}
 
+Il faut relancer postfix (Avec la commande \emph{postfix reload}par exemple). Nos mails sont maintenant pris
+par SpamAssasin à travers postfix. 
 \part{Autour de SpamAssasin}
 
 \section{Interfaces web}
@@ -593,11 +646,6 @@ SpmaAssassin. Cette liste non exhaustive comprend notamment:
  Peut aussi prendre en charge les règles de délivrances de procmail. 
  \item [php-sa-mysql] Spécifiquement créé pour SpamAssassin. 
  
-\end{description}
-
-
-\begin{description}
- \item 
 \end{description}
 
 

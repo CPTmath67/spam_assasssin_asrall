@@ -1,43 +1,48 @@
 \select@language {french}
-\contentsline {part}{I\hspace {1em}Pr\IeC {\'e}sentation de SpamAssassin}{3}{part.1}
-\contentsline {section}{\numberline {1}Probl\IeC {\'e}matique }{3}{section.1}
-\contentsline {subsection}{\numberline {1.1}Le SPAM}{3}{subsection.1.1}
-\contentsline {paragraph}{Comment reconna\IeC {\^\i }tre un SPAM:}{3}{section*.2}
-\contentsline {paragraph}{Statut l\IeC {\'e}gal}{3}{section*.3}
-\contentsline {section}{\numberline {2}Le projet}{4}{section.2}
-\contentsline {subsection}{\numberline {2.1}Informations}{4}{subsection.2.1}
-\contentsline {paragraph}{La licence apache}{4}{section*.4}
-\contentsline {subsection}{\numberline {2.2}D\IeC {\'e}veloppement}{4}{subsection.2.2}
-\contentsline {subsection}{\numberline {2.3}Qu'est ce que SpamAssassin}{5}{subsection.2.3}
-\contentsline {part}{II\hspace {1em}Ses fonctionnalit\IeC {\'e}s}{6}{part.2}
-\contentsline {section}{\numberline {3}Comment il filtre}{6}{section.3}
-\contentsline {paragraph}{Les test de SpamAssassin }{6}{section*.5}
-\contentsline {section}{\numberline {4}Le score}{8}{section.4}
-\contentsline {section}{\numberline {5}Apprentissage}{8}{section.5}
-\contentsline {subsection}{\numberline {5.1}Le filtre bay\IeC {\'e}sien}{8}{subsection.5.1}
-\contentsline {paragraph}{Utilisation par SpamAssassin}{8}{section*.6}
-\contentsline {paragraph}{Sa learn}{9}{section*.7}
-\contentsline {section}{\numberline {6}Articulation du programme}{10}{section.6}
-\contentsline {subsection}{\numberline {6.1}Configuration g\IeC {\'e}n\IeC {\'e}rale}{10}{subsection.6.1}
-\contentsline {subsubsection}{\numberline {6.1.1}Options les plus utilis\IeC {\'e}s}{10}{subsubsection.6.1.1}
-\contentsline {paragraph}{D\IeC {\'e}sactiver les configurations des utilisateurs}{10}{section*.9}
-\contentsline {subsection}{\numberline {6.2}Les r\IeC {\`e}gles}{11}{subsection.6.2}
-\contentsline {paragraph}{Explications des r\IeC {\`e}gles de filtrage de SpamAssassin}{11}{section*.10}
-\contentsline {paragraph}{Les tests}{13}{section*.11}
-\contentsline {paragraph}{Exemple}{14}{lstlisting.-8}
-\contentsline {paragraph}{modifier le score}{14}{section*.13}
-\contentsline {subsection}{\numberline {6.3}Fonctionnement de Liste blanche automatique(AWL)}{14}{subsection.6.3}
-\contentsline {subsubsection}{\numberline {6.3.1}Param\IeC {\'e}trage de l'AWL}{15}{subsubsection.6.3.1}
-\contentsline {section}{\numberline {7}Utilisation }{16}{section.7}
-\contentsline {subsection}{\numberline {7.1}MDA}{16}{subsection.7.1}
-\contentsline {subsection}{\numberline {7.2}SMTP}{17}{subsection.7.2}
-\contentsline {part}{III\hspace {1em}Autour de SpamAssasin}{17}{part.3}
-\contentsline {section}{\numberline {8}Interfaces web}{17}{section.8}
-\contentsline {section}{\numberline {9}Plugins non offciels}{17}{section.9}
-\contentsline {paragraph}{Plugin gratuit}{17}{section*.14}
-\contentsline {paragraph}{Plugin commerciaux}{18}{section*.15}
-\contentsline {section}{\numberline {10}Solutions pouvant tirer parti des capacit\IeC {\'e}s de SpamAssassin}{19}{section.10}
-\contentsline {subsection}{\numberline {10.1}Au travers de MTA}{19}{subsection.10.1}
-\contentsline {subsection}{\numberline {10.2}Au travers de MUA}{19}{subsection.10.2}
-\contentsline {subsection}{\numberline {10.3}Et plus encore}{20}{subsection.10.3}
-\contentsline {subsection}{\numberline {10.4}Solutions commerciales incluant SpamAssassin}{20}{subsection.10.4}
+\contentsline {part}{I\hspace {1em}Pr\IeC {\'e}sentation de SpamAssassin}{4}{part.1}
+\contentsline {section}{\numberline {1}Probl\IeC {\'e}matique }{4}{section.1}
+\contentsline {subsection}{\numberline {1.1}Le SPAM}{4}{subsection.1.1}
+\contentsline {paragraph}{Comment reconna\IeC {\^\i }tre un SPAM:}{4}{section*.2}
+\contentsline {paragraph}{Statut l\IeC {\'e}gal}{4}{section*.3}
+\contentsline {section}{\numberline {2}Le projet}{5}{section.2}
+\contentsline {subsection}{\numberline {2.1}Informations}{5}{subsection.2.1}
+\contentsline {paragraph}{La licence apache}{5}{section*.4}
+\contentsline {subsection}{\numberline {2.2}D\IeC {\'e}veloppement}{5}{subsection.2.2}
+\contentsline {subsection}{\numberline {2.3}Qu'est ce que SpamAssassin}{6}{subsection.2.3}
+\contentsline {part}{II\hspace {1em}Ses fonctionnalit\IeC {\'e}s}{7}{part.2}
+\contentsline {section}{\numberline {3}Comment il filtre}{7}{section.3}
+\contentsline {paragraph}{Les test de SpamAssassin }{7}{section*.5}
+\contentsline {section}{\numberline {4}Le score}{9}{section.4}
+\contentsline {section}{\numberline {5}Apprentissage}{10}{section.5}
+\contentsline {subsection}{\numberline {5.1}Le filtre bay\IeC {\'e}sien}{10}{subsection.5.1}
+\contentsline {paragraph}{Utilisation par SpamAssassin}{10}{section*.6}
+\contentsline {paragraph}{Sa learn}{10}{section*.7}
+\contentsline {section}{\numberline {6}Articulation du programme}{11}{section.6}
+\contentsline {subsection}{\numberline {6.1}installation}{11}{subsection.6.1}
+\contentsline {paragraph}{distributions}{11}{section*.9}
+\contentsline {paragraph}{Manuellement}{11}{section*.10}
+\contentsline {subsection}{\numberline {6.2}Configuration g\IeC {\'e}n\IeC {\'e}rale}{11}{subsection.6.2}
+\contentsline {subsubsection}{\numberline {6.2.1}Options de configurations}{13}{subsubsection.6.2.1}
+\contentsline {paragraph}{D\IeC {\'e}sactiver les configurations des utilisateurs}{13}{section*.11}
+\contentsline {subsection}{\numberline {6.3}Les r\IeC {\`e}gles}{13}{subsection.6.3}
+\contentsline {paragraph}{Explications des r\IeC {\`e}gles de filtrage de SpamAssassin}{13}{section*.12}
+\contentsline {paragraph}{Les tests}{15}{section*.13}
+\contentsline {paragraph}{Exemple}{16}{lstlisting.-13}
+\contentsline {paragraph}{modifier le score}{16}{section*.15}
+\contentsline {subsection}{\numberline {6.4}Fonctionnement de Liste blanche automatique(AWL)}{17}{subsection.6.4}
+\contentsline {subsubsection}{\numberline {6.4.1}Param\IeC {\'e}trage de l'AWL}{17}{subsubsection.6.4.1}
+\contentsline {section}{\numberline {7}Utilisation }{19}{section.7}
+\contentsline {subsection}{\numberline {7.1}MDA}{19}{subsection.7.1}
+\contentsline {paragraph}{exemple avec procmail}{19}{section*.16}
+\contentsline {subsection}{\numberline {7.2}SMTP}{20}{subsection.7.2}
+\contentsline {paragraph}{Exemple avec postfix}{20}{section*.17}
+\contentsline {part}{III\hspace {1em}Autour de SpamAssasin}{20}{part.3}
+\contentsline {section}{\numberline {8}Interfaces web}{20}{section.8}
+\contentsline {section}{\numberline {9}Plugins non offciels}{21}{section.9}
+\contentsline {paragraph}{Plugin gratuit}{21}{section*.18}
+\contentsline {paragraph}{Plugin commerciaux}{22}{section*.19}
+\contentsline {section}{\numberline {10}Solutions pouvant tirer parti des capacit\IeC {\'e}s de SpamAssassin}{23}{section.10}
+\contentsline {subsection}{\numberline {10.1}Au travers de MTA}{23}{subsection.10.1}
+\contentsline {subsection}{\numberline {10.2}Au travers de MUA}{23}{subsection.10.2}
+\contentsline {subsection}{\numberline {10.3}Et plus encore}{23}{subsection.10.3}
+\contentsline {subsection}{\numberline {10.4}Solutions commerciales incluant SpamAssassin}{24}{subsection.10.4}

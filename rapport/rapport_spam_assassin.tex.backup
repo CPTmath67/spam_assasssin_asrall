@@ -243,19 +243,22 @@ Ce résultat sera ensuite utilisé par d'autres programmes pour déterminer des 
 
 \section{Le score} \label{score}
 C'est la base du signalement des SPAM de SpamAsassin. Un mail après avoir subi des test différents se voit attribuer une note. Cette note permet
-ensuite de définir des actions à effectue. Quand un mail est considéré comme SPAM, SpamAssassin ajoute ses propres entêtes (Exemple ~\ref{fig:ex_score}):
+ensuite de définir des actions à effectue. Quand un mail est considéré comme SPAM, SpamAssassin ajoute ses propres entêtes (Exemple en dessous):
 \begin{itemize}
  \item ''-Spam-Level: \*\*\*\*\*\*\*\*\* '': Renseigne le score (ici 9)
- \item -Spam-Status: Yes, score=9.0 required=5.0 tests=BAYES\_99,FROM\_EXCESS\_BASE64,FR\_HOWTOUNSUBSCRIBE,FR\_SPAMISLEGAL \dots : Indique des informations relatives aux test effectués et la configuration)
+ \item -Spam-Status: Yes, score=9.0 required=5.0 tests=\\BAYES\_99,FROM\_EXCESS\_BASE64,FR\_HOWTOUNSUBSCRIBE,FR\_SPAMISLEGAL \dots \\
+ : Indique des informations relatives aux test effectués et la configuration)
 \end{itemize}
 . L'utilisateur peut paramétrer ce score pour définir une marge de définitions des SPAMs(valeurs ''require``). Une fois ce score ateint le mail est considéré comme SPAM.
 C'est ensuite aux autres programmes d'utiliser ces données. Par exemple on pourrait configurer un MUA pour qu'il sépare 
 les SPAM par score suivant des filtres définit. 
 
-\label{baye}
+ \includegraphics[width=\textwidth]{annexes/entete.png}
+
+
 
 \section{Apprentissage}
-
+\label{baye}
 \subsection{Le filtre bayésien}
 
 Une fonctionnalité qui est une des plus importantes caractéristiques de SpamAssassin est sans doute son filtre
@@ -305,6 +308,22 @@ reçu déterminera quand les règles du filtre bayésiens s'activeront(Elle ne p
 
 
 \section{Articulation du programme}
+\subsection{installation}
+\paragraph{distributions}
+Les plus grandes distributions possède spamassassin dans Leurs dépôts. Par exemple pour debian il suffit de taper:
+\begin{lstlisting}
+ $aptitude install spmasssassin 
+\end{lstlisting}
+cela à l'avantage de gérer les dépendances automatiquement.
+
+\paragraph{Manuellement}
+Si besoin SpamAssassin s'installe facilement Manuellement. Il suffit pour ce faire de récupérer l'archive du programme sur le site du projet ( \href{http://spamassassin.apache.org/}).
+Ensuite on l'extrait dans un repertoire de son choix:
+\begin{lstlisting}
+ tar xvfz Mail-SpamAssassin-3.3.2.tar.gz
+\end{lstlisting}
+Il faut se rendre dans le repertoire \emph{ Mail-SpamAssassin-3.3.2} qui vient de se créer. 
+
 
 \subsection{Configuration générale}
 
@@ -317,7 +336,8 @@ Par défaut, un certain nombre d’options sont prédéfinies.
 SpamAssassin tient ses avantages en terme de modularité et de sa facilité d'intégration avec d'autres programme de son langage, PERL.
 C'est un module PERL qui permet d'être utiliser plus facilement à travers une distributions PERL. 
 
-\subsubsection{Options les plus utilisés}
+\subsubsection{Options de configurations}
+Quelques une des options qui s'avèrent utiles.
 \paragraph{Désactiver les configurations des utilisateurs}
 Dans certains cas on peut désactiver les fichiers de préférences des utilisateurs. Si les utilisateurs n'ont pas accès à leurs configurations 
 (pour éviter de lire inutilement les fichiers) ou si SpamAssassin n'est pas appelé par les utilisateurs(dans le cas d'un filtrage générale).
@@ -589,7 +609,10 @@ SpmaAssassin. Cette liste non exhaustive comprend notamment:
  \item [Webuserprefs] Ecrite en PHP cette interface supporte 
  \item [vMail.Admin] Interface écrite en PHP et PERL. Tout le stockage est fait en SQL. Cette interface permet 
  de combiner la gestion par domaine par un administrateur mais egalement par utilisateur.
- \item [Webmin] 
+ \item [Webmin] Une interface d'administration de serveur, inclus un support complet de SpamAssassin(au début seulement avec un plugin).
+ Peut aussi prendre en charge les règles de délivrances de procmail. 
+ \item [php-sa-mysql] Spécifiquement créé pour SpamAssassin. 
+ 
 \end{description}
 
 
